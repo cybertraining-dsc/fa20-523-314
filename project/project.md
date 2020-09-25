@@ -1,6 +1,6 @@
 # Headline
 
-##Bullet list 
+## Bullet list 
 
 * bullet
 
