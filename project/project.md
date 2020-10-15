@@ -6,14 +6,16 @@ This project is based on the dataset Residential Power Usage 3 years data in Kag
 Data is spread across two csv files.
 *	power_usage_2016_to_2020.csv
 This file contains basic details of the data like startdate with hour, value of power consumption in kwh, day of the week and notes. It has 4 features and 35953 instances. 
-Figure 1
+
+![Figure 1](https://github.com/cybertraining-dsc/fa20-523-314/blob/master/fig%201.png "Figure 1")
 
 Day of the week is an integer value with 0 being Monday. Notes gives us details like whether that day is weekend, weekday, covid lockdown or vacation. The Figure 1 shows retrieval and first few rows of the data.
 
+![Notes](https://github.com/cybertraining-dsc/fa20-523-314/blob/master/fig%202.png)
 *	weather_2016_2020_daily.csv
 This file contains the weather conditions of that particular day. It has 19 features and 1553 instances. Figure 2 shows retrieval and first few rows and columns of this file.
-Figure 2 
 
+![Figure 2](https://github.com/cybertraining-dsc/fa20-523-314/blob/master/Fig%203.png "Figure 2")
 Units of features are given as below:
 * Temperature    - F deg
 * Dew Point      - F deg
