@@ -1,5 +1,8 @@
-# RESIDENTIAL POWER USAGE PREDICTION
-Team size -> 1 (Siny P Raphel)
+# Residential Power Usage Prediction
+
+Siny P Raphel
+
+## Introduction
 
 Electricity is an inevitable part of our day today life. Most of the electric service providers like duke, dominion provide customers their consumption data so that customers are aware of their usages. Some providers give predictions on their future usages so that they are prepared. 
 This project is based on the dataset Residential Power Usage 3 years data in Kaggle datasets. The dataset contains data of hourly power consumption of a 2 storied house in Houston,Texas from 01-06-2016 to August 2020. It includes data during the Covid-19 lockdown and are marked as well. We are planning to build a model to predict future usage from available data. 
@@ -39,5 +42,6 @@ This dataset is chosen because,
 1.	There were datasets similar to this one. But this one has latest power usage data till August this year.
 2.	It has marked covid lockdown, vacations, weekdays and weekends which is a challenge for prediction.
 
-#### _References:_
-_https://www.kaggle.com/srinuti/residential-power-usage-3years-data-timeseries_
+## References
+
+* <https://www.kaggle.com/srinuti/residential-power-usage-3years-data-timeseries>
