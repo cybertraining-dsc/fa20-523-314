@@ -1,5 +1,7 @@
 # Residential Power Usage Prediction
 
+- [ ] please use our trivial template posted in piazza
+
 Siny P Raphel
 
 ## Introduction
