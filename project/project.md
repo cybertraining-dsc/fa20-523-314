@@ -21,7 +21,8 @@ Day of the week is an integer value with 0 being Monday. Notes gives us details 
 This file contains the weather conditions of that particular day. It has 19 features and 1553 instances. Figure 2 shows retrieval and first few rows and columns of this file.
 
 ![Figure 2](https://github.com/cybertraining-dsc/fa20-523-314/blob/master/project/images/Fig%203.png "Figure 2")
-Units of features are given as below:
+Units of features are given as follows:
+
 * Temperature    - F deg
 * Dew Point      - F deg
 * Humidity       - %age
