@@ -1,6 +1,7 @@
 # Residential Power Usage Prediction
 
 - [ ] please use our trivial template posted in piazza
+- [ ] please remove %/spaces from image names
 
 Siny P Raphel
 
