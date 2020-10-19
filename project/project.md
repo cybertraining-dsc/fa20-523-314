@@ -1,18 +1,18 @@
 # Residential Power Usage Prediction
 
 - [ ] please use our trivial template posted in piazza
-- [ ] please never use sapces in image names
+- [x] please never use sapces in image names
 - [ ] please use footnotes for refernces, you must cite them
-- [ ] figure numbers are inconsitent, you have 3 figures
+- [X] figure numbers are inconsitent, you have 3 figures
 - [ ] document not checked on content graders will do that
 
-Siny P Raphel
+Siny P Raphel, [fa20-523-314](https://github.com/cybertraining-dsc/fa20-523-314/), [Edit](https://github.com/cybertraining-dsc/fa20-523-314/blob/master/project/project.md)
 
 ## Introduction
 
 Electricity is an inevitable part of our day today life. Most of the electric service providers like duke, dominion provide customers their consumption data so that customers are aware of their usages. Some providers give predictions on their future usages so that they are prepared. 
 
-This project is based on the dataset Residential Power Usage 3 years data in Kaggle datasets. The dataset contains data of hourly power consumption of a 2 storied house in Houston,Texas from 01-06-2016 to August 2020. It includes data during the Covid-19 lockdown and are marked as well. We are planning to build a model to predict future usage from available data. 
+This project is based on the dataset Residential Power Usage 3 years data in Kaggle datasets[^1]. The dataset contains data of hourly power consumption of a 2 storied house in Houston,Texas from 01-06-2016 to August 2020. It includes data during the Covid-19 lockdown and are marked as well. We are planning to build a model to predict future usage from available data. 
 Data is spread across two csv files.
 
 *	`power_usage_2016_to_2020.csv`
@@ -23,13 +23,13 @@ This file contains basic details of the data like startdate with hour, value of 
 
 Day of the week is an integer value with 0 being Monday. Notes gives us details like whether that day is weekend, weekday, covid lockdown or vacation. The Figure 1 shows retrieval and first few rows of the data.
 
-![Notes](https://github.com/cybertraining-dsc/fa20-523-314/blob/master/project/images/fig-2.png)
+![Figure 2](https://github.com/cybertraining-dsc/fa20-523-314/blob/master/project/images/fig-2.png)
 
 *	weather_2016_2020_daily.csv
 
-This file contains the weather conditions of that particular day. It has 19 features and 1553 instances. Figure 2 shows retrieval and first few rows and columns of this file.
+This file contains the weather conditions of that particular day. It has 19 features and 1553 instances. Figure 3 shows retrieval and first few rows and columns of this file.
 
-![Figure 2](https://github.com/cybertraining-dsc/fa20-523-314/blob/master/project/images/fig-3.png)
+![Figure 3](https://github.com/cybertraining-dsc/fa20-523-314/blob/master/project/images/fig-3.png)
 
 Units of features are given as follows:
 
@@ -59,4 +59,4 @@ This dataset is chosen because,
 
 ## References
 
-* <https://www.kaggle.com/srinuti/residential-power-usage-3years-data-timeseries>
+[^1]: <https://www.kaggle.com/srinuti/residential-power-usage-3years-data-timeseries>
