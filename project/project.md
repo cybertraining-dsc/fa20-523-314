@@ -8,6 +8,19 @@
 
 Siny P Raphel, [fa20-523-314](https://github.com/cybertraining-dsc/fa20-523-314/), [sinypr@gmail.com](https://github.com/cybertraining-dsc/fa20-523-314/blob/master/project/project.md)
 
+{{% pageinfo %}}
+
+## Abstract
+
+To be added
+
+Contents
+
+{{< table_of_contents >}}
+
+{{% /pageinfo %}}
+
+
 ## Introduction
 
 Electricity is an inevitable part of our day today life. Most of the electric service providers like duke, dominion provide customers their consumption data so that customers are aware of their usages. Some providers give predictions on their future usages so that they are prepared. 
