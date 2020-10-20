@@ -21,15 +21,21 @@ This file contains basic details of the data like startdate with hour, value of 
 
 ![Figure 1](https://github.com/cybertraining-dsc/fa20-523-314/blob/master/project/images/fig-1.png)
 
+**Figure 1:** Caption missing
+
 Day of the week is an integer value with 0 being Monday. Notes gives us details like whether that day is weekend, weekday, covid lockdown or vacation. The Figure 1 shows retrieval and first few rows of the data.
 
 ![Figure 2](https://github.com/cybertraining-dsc/fa20-523-314/blob/master/project/images/fig-2.png)
+
+**Figure 2:** Caption missing
 
 *	weather_2016_2020_daily.csv
 
 This file contains the weather conditions of that particular day. It has 19 features and 1553 instances. Figure 3 shows retrieval and first few rows and columns of this file.
 
 ![Figure 3](https://github.com/cybertraining-dsc/fa20-523-314/blob/master/project/images/fig-3.png)
+
+**Figure 3:** Caption missing
 
 Units of features are given as follows:
 
