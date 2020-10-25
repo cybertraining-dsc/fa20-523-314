@@ -1,11 +1,5 @@
 # Residential Power Usage Prediction
 
-- [ ] please use our trivial template posted in piazza
-- [x] please never use sapces in image names
-- [ ] please use footnotes for refernces, you must cite them
-- [X] figure numbers are inconsitent, you have 3 figures
-- [ ] document not checked on content graders will do that
-
 Siny P Raphel, [fa20-523-314](https://github.com/cybertraining-dsc/fa20-523-314/), [sinypr@gmail.com](https://github.com/cybertraining-dsc/fa20-523-314/blob/master/project/project.md)
 
 {{% pageinfo %}}
