@@ -56,6 +56,22 @@ Units of features are given as follows:
 * Pressure       - Hg
 * Precipitation  – inch
 
+## Merge datasets
+
+The 'StartDate' fearure of power_usage dataset and 'Date' feature of the weather dataset are used as key to merge the two datasets. But the format of both features are different. StartDate feature is the combination of date and hour. Whereas, 'Date' feature of weather is just the date. So first 'StartDate' column is splitted into 'Date' and 'Hour' columns. Since the 'StartDate' column is in Pandas Period type, the function strftime() is used for converting to the required format. 
+
+## Exploratory Data Analysis
+
+Here we analyse different features, their relation with each other and target. 
+
+![Figure 4](https://github.com/cybertraining-dsc/fa20-523-314/blob/master/project/images/dow.png)
+
+**Figure 4:** Average power usage by day of the week
+
+![Figure 5](https://github.com/cybertraining-dsc/fa20-523-314/blob/master/project/images/tod.png)
+
+**Figure 5:** Average power usage by type of the day
+
 ## Planning
 
 We will be using python to develop the model. Since the expected outputs are real numbers(power consumption in kWh) we might be using linear regression or similar ones. We will try using gradient descent for optimization. Since the weather data has 19 features we might use feature selection methods to select best features that increase the accuracy of the model. 
@@ -77,6 +93,12 @@ This dataset is chosen because,
 1.	There were datasets similar to this one. But this one has latest power usage data till August this year.
 2.	It has marked covid lockdown, vacations, weekdays and weekends which is a challenge for prediction.
 
+
+## Project Timeline:
+ * EDA and preprocessing - 11/09/2020
+ * First set of result    - 11/11/2020
+ * Hyperparameter tuning, pipelines/ final setup - 11/15/2020
+ 
 ## References
 
-[^1]: <https://www.kaggle.com/srinuti/residential-power-usage-3years-data-timeseries>
+[^1]: Residential Power Usage dataset <https://www.kaggle.com/srinuti/residential-power-usage-3years-data-timeseries>
