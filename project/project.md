@@ -1,5 +1,7 @@
 # Residential Power Usage Prediction
 
+[![Check Report](https://github.com/cybertraining-dsc/fa20-523-314/workflows/Check%20Report/badge.svg)](https://github.com/cybertraining-dsc/fa20-523-314/actions)
+
 - [ ] watch video for image inclusion
 
 Siny P Raphel, [fa20-523-314](https://github.com/cybertraining-dsc/fa20-523-314/), [sinypr@gmail.com](https://github.com/cybertraining-dsc/fa20-523-314/blob/master/project/project.md)
