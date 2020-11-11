@@ -33,13 +33,13 @@ Data is spread across two csv files.
 
 This file contains basic details of the data like startdate with hour, value of power consumption in kwh, day of the week and notes. It has 4 features and 35953 instances. 
 
-![Figure 1](https://github.com/cybertraining-dsc/fa20-523-314/blob/master/project/images/fig-1.png)
+![Figure 1](https://github.com/cybertraining-dsc/fa20-523-314/raw/master/project/images/fig-1.png)
 
 **Figure 1:** First five rows of power_usage_2016_to_2020 data
 
 Day of the week is an integer value with 0 being Monday. Notes gives us details like whether that day is weekend, weekday, covid lockdown or vacation. The Figure 1 shows retrieval and first few rows of the data.
 
-![Figure 2](https://github.com/cybertraining-dsc/fa20-523-314/blob/master/project/images/fig-2.png)
+![Figure 2](https://github.com/cybertraining-dsc/fa20-523-314/raw/master/project/images/fig-2.png)
 
 **Figure 2:** Details in "notes" column
 
@@ -47,7 +47,7 @@ Day of the week is an integer value with 0 being Monday. Notes gives us details 
 
 This file contains the weather conditions of that particular day. It has 19 features and 1553 instances. Figure 3 shows retrieval and first few rows and columns of this file.
 
-![Figure 3](https://github.com/cybertraining-dsc/fa20-523-314/blob/master/project/images/fig-3.png)
+![Figure 3](https://github.com/cybertraining-dsc/fa20-523-314/raw/master/project/images/fig-3.png)
 
 **Figure 3:** First few rows of weather_2016_2020_daily data
 
@@ -68,11 +68,11 @@ The 'StartDate' fearure of power_usage dataset and 'Date' feature of the weather
 
 Here we analyse different features, their relation with each other and target. 
 
-![Figure 4](https://github.com/cybertraining-dsc/fa20-523-314/blob/master/project/images/dow.png)
+![Figure 4](https://github.com/cybertraining-dsc/fa20-523-314/raw/master/project/images/dow.png)
 
 **Figure 4:** Average power usage by day of the week
 
-![Figure 5](https://github.com/cybertraining-dsc/fa20-523-314/blob/master/project/images/tod.png)
+![Figure 5](https://github.com/cybertraining-dsc/fa20-523-314/raw/master/project/images/tod.png)
 
 **Figure 5:** Average power usage by type of the day
 
