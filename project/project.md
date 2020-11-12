@@ -1,12 +1,14 @@
 # Residential Power Usage Prediction
 
+[![Check Report](https://github.com/cybertraining-dsc/fa20-523-314/workflows/Check%20Report/badge.svg)](https://github.com/cybertraining-dsc/fa20-523-314/actions)
+
 Siny P Raphel, [fa20-523-314](https://github.com/cybertraining-dsc/fa20-523-314/), [sinypr@gmail.com](https://github.com/cybertraining-dsc/fa20-523-314/blob/master/project/project.md)
 
 {{% pageinfo %}}
 
 ## Abstract
 
-To be added
+Electricity is an inevitable part of our day today life. Most of the electric service providers like duke, dominion provide customers their consumption data so that customers are aware of their usages. Some providers give predictions on their future usages so that they are prepared. This project is based on the dataset Residential Power Usage 3 years data in Kaggle datasets[^1]. The dataset contains data of hourly power consumption of a 2 storied house in Houston, Texas from 01-06-2016 to August 2020. It includes data during the Covid-19 lockdown and are marked as well. We are planning to build a model to predict future usage from available data. 
 
 Contents
 
@@ -14,12 +16,15 @@ Contents
 
 {{% /pageinfo %}}
 
+**Keywords:** power usage, big data, regression 
 
 ## Introduction
 
-Electricity is an inevitable part of our day today life. Most of the electric service providers like duke, dominion provide customers their consumption data so that customers are aware of their usages. Some providers give predictions on their future usages so that they are prepared. 
+Most of the houses in USA are equipped with lightings and refrigerators using electricity. The usage of air conditioners is also increasing. From Figure 1, we can see that top three categories for energy consumption are air conditioning, space heating, water heating as of 2015.
 
-This project is based on the dataset Residential Power Usage 3 years data in Kaggle datasets[^1]. The dataset contains data of hourly power consumption of a 2 storied house in Houston,Texas from 01-06-2016 to August 2020. It includes data during the Covid-19 lockdown and are marked as well. We are planning to build a model to predict future usage from available data. 
+![Figure 1](https://github.com/cybertraining-dsc/fa20-523-314/raw/master/project/images/chart.png)
+
+**Figure 1:** Residential electricity consumption by end use, 2015[^2].
 
 ## Datasets
 
@@ -29,23 +34,23 @@ Data is spread across two csv files.
 
 This file contains basic details of the data like startdate with hour, value of power consumption in kwh, day of the week and notes. It has 4 features and 35953 instances. 
 
-![Figure 1](https://github.com/cybertraining-dsc/fa20-523-314/raw/master/project/images/fig-1.png)
+![Figure 2](https://github.com/cybertraining-dsc/fa20-523-314/raw/master/project/images/fig-1.png)
 
-**Figure 1:** First five rows of power_usage_2016_to_2020 data
+**Figure 2:** First five rows of power_usage_2016_to_2020 data
 
-Day of the week is an integer value with 0 being Monday. Notes gives us details like whether that day is weekend, weekday, covid lockdown or vacation. The Figure 1 shows retrieval and first few rows of the data.
+Day of the week is an integer value with 0 being Monday. Notes gives us details like whether that day is weekend, weekday, covid lockdown or vacation. The Figure 2 shows retrieval and first few rows of the data.
 
-![Figure 2](https://github.com/cybertraining-dsc/fa20-523-314/raw/master/project/images/fig-2.png)
+![Figure 3](https://github.com/cybertraining-dsc/fa20-523-314/raw/master/project/images/fig-2.png)
 
-**Figure 2:** Details in "notes" column
+**Figure 3:** Details in "notes" column
 
 *	weather_2016_2020_daily.csv
 
-This file contains the weather conditions of that particular day. It has 19 features and 1553 instances. Figure 3 shows retrieval and first few rows and columns of this file.
+This file contains the weather conditions of that particular day. It has 19 features and 1553 instances. Figure 4 shows retrieval and first few rows and columns of this file.
 
-![Figure 3](https://github.com/cybertraining-dsc/fa20-523-314/raw/master/project/images/fig-3.png)
+![Figure 4](https://github.com/cybertraining-dsc/fa20-523-314/raw/master/project/images/fig-3.png)
 
-**Figure 3:** First few rows of weather_2016_2020_daily data
+**Figure 4:** First few rows of weather_2016_2020_daily data
 
 Units of features are given as follows:
 
@@ -58,19 +63,19 @@ Units of features are given as follows:
 
 ## Merge datasets
 
-The 'StartDate' fearure of power_usage dataset and 'Date' feature of the weather dataset are used as key to merge the two datasets. But the format of both features are different. StartDate feature is the combination of date and hour. Whereas, 'Date' feature of weather is just the date. So first 'StartDate' column is splitted into 'Date' and 'Hour' columns. Since the 'StartDate' column is in Pandas Period type, the function strftime() is used for converting to the required format. 
+The 'StartDate' feature of power_usage dataset and 'Date' feature of the weather dataset are used as key to merge the two datasets. But the format of both features is different. StartDate feature is the combination of date and hour. Whereas, 'Date' feature of weather is just the date. So first 'StartDate' column is split into 'Date' and 'Hour' columns. Since the 'StartDate' column is in Pandas Period type, the function strftime() is used for converting to the required format.
 
 ## Exploratory Data Analysis
 
 Here we analyse different features, their relation with each other and target. 
 
-![Figure 4](https://github.com/cybertraining-dsc/fa20-523-314/raw/master/project/images/dow.png)
+![Figure 5](https://github.com/cybertraining-dsc/fa20-523-314/raw/master/project/images/dow.png)
 
-**Figure 4:** Average power usage by day of the week
+**Figure 5:** Average power usage by day of the week
 
-![Figure 5](https://github.com/cybertraining-dsc/fa20-523-314/raw/master/project/images/tod.png)
+![Figure 6](https://github.com/cybertraining-dsc/fa20-523-314/raw/master/project/images/tod.png)
 
-**Figure 5:** Average power usage by type of the day
+**Figure 6:** Average power usage by type of the day
 
 ## Planning
 
@@ -101,4 +106,6 @@ This dataset is chosen because,
  
 ## References
 
-[^1]: Residential Power Usage dataset <https://www.kaggle.com/srinuti/residential-power-usage-3years-data-timeseries>
+[^1]: Residential Power Usage dataset, <https://www.kaggle.com/srinuti/residential-power-usage-3years-data-timeseries>
+
+[^2]: Use of energy explained - Energy use in homes, <https://www.eia.gov/energyexplained/use-of-energy/electricity-use-in-homes.php>
