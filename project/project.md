@@ -1,5 +1,7 @@
 # Residential Power Usage Prediction
 
+- [ ] Please add an empty line after the title or subtitle headings. I fixed this for you. 
+
 [![Check Report](https://github.com/cybertraining-dsc/fa20-523-314/workflows/Check%20Report/badge.svg)](https://github.com/cybertraining-dsc/fa20-523-314/actions)
 
 Siny P Raphel, [fa20-523-314](https://github.com/cybertraining-dsc/fa20-523-314/), [sinypr@gmail.com](https://github.com/cybertraining-dsc/fa20-523-314/blob/master/project/project.md)
@@ -100,6 +102,7 @@ This dataset is chosen because,
 
 
 ## Project Timeline:
+
  * EDA and preprocessing - 11/09/2020
  * First set of result    - 11/11/2020
  * Hyperparameter tuning, pipelines/ final setup - 11/15/2020
