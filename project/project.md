@@ -1,10 +1,9 @@
 # Residential Power Usage Prediction
 
-- [ ] Please add an empty line after the title or subtitle headings. I fixed this for you. 
 
 [![Check Report](https://github.com/cybertraining-dsc/fa20-523-314/workflows/Check%20Report/badge.svg)](https://github.com/cybertraining-dsc/fa20-523-314/actions)
 
-Siny P Raphel, [fa20-523-314](https://github.com/cybertraining-dsc/fa20-523-314/), [sinypr@gmail.com](https://github.com/cybertraining-dsc/fa20-523-314/blob/master/project/project.md)
+Siny P Raphel, [fa20-523-314](https://github.com/cybertraining-dsc/fa20-523-314/), [Edit](https://github.com/cybertraining-dsc/fa20-523-314/blob/master/project/project.md)
 
 {{% pageinfo %}}
 
@@ -20,7 +19,7 @@ Contents
 
 **Keywords:** power usage, big data, regression 
 
-## Introduction
+## 1. Introduction
 
 Most of the houses in USA are equipped with lightings and refrigerators using electricity. The usage of air conditioners is also increasing. From Figure 1, we can see that top three categories for energy consumption are air conditioning, space heating, water heating as of 2015.
 
@@ -28,7 +27,7 @@ Most of the houses in USA are equipped with lightings and refrigerators using el
 
 **Figure 1:** Residential electricity consumption by end use, 2015[^2].
 
-## Datasets
+## 2. Datasets
 
 Data is spread across two csv files.
 
@@ -63,11 +62,11 @@ Units of features are given as follows:
 * Pressure       - Hg
 * Precipitation  – inch
 
-## Merge datasets
+## 3. Merge datasets
 
 The 'StartDate' feature of power_usage dataset and 'Date' feature of the weather dataset are used as key to merge the two datasets. But the format of both features is different. StartDate feature is the combination of date and hour. Whereas, 'Date' feature of weather is just the date. So first 'StartDate' column is split into 'Date' and 'Hour' columns. Since the 'StartDate' column is in Pandas Period type, the function strftime() is used for converting to the required format.
 
-## Exploratory Data Analysis
+## 4. Exploratory Data Analysis
 
 Here we analyse different features, their relation with each other and target. 
 
@@ -79,7 +78,7 @@ Here we analyse different features, their relation with each other and target.
 
 **Figure 6:** Average power usage by type of the day
 
-## Planning
+## 5. Planning
 
 We will be using python to develop the model. Since the expected outputs are real numbers(power consumption in kWh) we might be using linear regression or similar ones. We will try using gradient descent for optimization. Since the weather data has 19 features we might use feature selection methods to select best features that increase the accuracy of the model. 
 The data spread across two files will have to be merged according to date. For that the StartDate feature will have to be first split to date and time. Then the two datasets will have to be merged according to the date only. From the initial inspection of the data, the date feature of datasets have some date format issues which will have to be resolved before starting cleaning. 
@@ -93,7 +92,7 @@ In this project we will be planning the following steps:
 5.	Calculate accuracy of each model
 6.	Conclusion on which algorithm will be best suited to use and the reason for it.
 
-## Reason to choose this dataset
+## 6. Reason to choose this dataset
 
 This dataset is chosen because,
 
@@ -101,13 +100,17 @@ This dataset is chosen because,
 2.	It has marked covid lockdown, vacations, weekdays and weekends which is a challenge for prediction.
 
 
-## Project Timeline:
+## 7. Project Timeline:
 
  * EDA and preprocessing - 11/09/2020
  * First set of result    - 11/11/2020
  * Hyperparameter tuning, pipelines/ final setup - 11/15/2020
  
-## References
+## 8. Conclusion
+
+Will be added on completion
+ 
+## 9. References
 
 [^1]: Residential Power Usage dataset, <https://www.kaggle.com/srinuti/residential-power-usage-3years-data-timeseries>
 
