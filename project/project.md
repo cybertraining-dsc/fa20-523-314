@@ -5,7 +5,7 @@
 
 [![Check Report](https://github.com/cybertraining-dsc/fa20-523-314/workflows/Check%20Report/badge.svg)](https://github.com/cybertraining-dsc/fa20-523-314/actions)
 
-Siny P Raphel, [fa20-523-314](https://github.com/cybertraining-dsc/fa20-523-314/), [Edit](https://github.com/cybertraining-dsc/fa20-523-314/blob/master/project/project.md)
+Siny P Raphel, [fa20-523-314](https://github.com/cybertraining-dsc/fa20-523-314/), [Edit](https://github.com/cybertraining-dsc/fa20-523-314/blob/main/project/project.md)
 
 {{% pageinfo %}}
 
@@ -25,7 +25,7 @@ Contents
 
 Most of the houses in USA are equipped with lightings and refrigerators using electricity. The usage of air conditioners is also increasing. From Figure 1, we can see that top three categories for energy consumption are air conditioning, space heating, water heating as of 2015.
 
-![Figure 1](https://github.com/cybertraining-dsc/fa20-523-314/raw/master/project/images/chart.png)
+![Figure 1](https://github.com/cybertraining-dsc/fa20-523-314/raw/main/project/images/chart.png)
 
 **Figure 1:** Residential electricity consumption by end use, 2015[^2].
 
@@ -37,13 +37,13 @@ Data is spread across two csv files.
 
 This file contains basic details of the data like startdate with hour, value of power consumption in kwh, day of the week and notes. It has 4 features and 35953 instances. 
 
-![Figure 2](https://github.com/cybertraining-dsc/fa20-523-314/raw/master/project/images/fig-1.png)
+![Figure 2](https://github.com/cybertraining-dsc/fa20-523-314/raw/main/project/images/fig-1.png)
 
 **Figure 2:** First five rows of power_usage_2016_to_2020 data
 
 Day of the week is an integer value with 0 being Monday. Notes gives us details like whether that day is weekend, weekday, covid lockdown or vacation. The Figure 2 shows retrieval and first few rows of the data.
 
-![Figure 3](https://github.com/cybertraining-dsc/fa20-523-314/raw/master/project/images/fig-2.png)
+![Figure 3](https://github.com/cybertraining-dsc/fa20-523-314/raw/main/project/images/fig-2.png)
 
 **Figure 3:** Details in "notes" column
 
@@ -51,7 +51,7 @@ Day of the week is an integer value with 0 being Monday. Notes gives us details 
 
 This file contains the weather conditions of that particular day. It has 19 features and 1553 instances. Figure 4 shows retrieval and first few rows and columns of this file.
 
-![Figure 4](https://github.com/cybertraining-dsc/fa20-523-314/raw/master/project/images/fig-3.png)
+![Figure 4](https://github.com/cybertraining-dsc/fa20-523-314/raw/main/project/images/fig-3.png)
 
 **Figure 4:** First few rows of weather_2016_2020_daily data
 
@@ -72,11 +72,11 @@ The 'StartDate' feature of power_usage dataset and 'Date' feature of the weather
 
 Here we analyse different features, their relation with each other and target. 
 
-![Figure 5](https://github.com/cybertraining-dsc/fa20-523-314/raw/master/project/images/dow.png)
+![Figure 5](https://github.com/cybertraining-dsc/fa20-523-314/raw/main/project/images/dow.png)
 
 **Figure 5:** Average power usage by day of the week
 
-![Figure 6](https://github.com/cybertraining-dsc/fa20-523-314/raw/master/project/images/tod.png)
+![Figure 6](https://github.com/cybertraining-dsc/fa20-523-314/raw/main/project/images/tod.png)
 
 **Figure 6:** Average power usage by type of the day
 
