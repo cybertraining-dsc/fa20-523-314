@@ -76,9 +76,17 @@ Here we analyse different features, their relation with each other and target.
 
 **Figure 5:** Average power usage by day of the week
 
+In Figure 5, the average power usage by the day of the week is plotted. It is analyzed that Saturday and Friday has the most usage compared to other days of the week. Similarly, from Figure 6, there is a huge dip in power usage during vacation. Other three occasions like covid lockdown, weekend and weekdays have almost same power usage, even though consumption during weekends outweigh.
+
 ![Figure 6](https://github.com/cybertraining-dsc/fa20-523-314/raw/main/project/images/tod.png)
 
 **Figure 6:** Average power usage by type of the day
+
+In Figure 7, we compare the monthly power consumption for three years - 2018, 2019, 2020. The overall power usage in 2019 is less compared to 2018. But in 2020 may be due to Covid-lockdown the power consumption shoots. Also, power consumtion peaks in the months June, July and August. 
+
+![Figure 7](https://github.com/cybertraining-dsc/fa20-523-314/raw/main/project/images/monthly_power.png)
+
+**Figure 7:** Average power usage per month for three years
 
 ## 5. Planning
 
@@ -117,3 +125,7 @@ Will be added on completion
 [^1]: Residential Power Usage dataset, <https://www.kaggle.com/srinuti/residential-power-usage-3years-data-timeseries>
 
 [^2]: Use of energy explained - Energy use in homes, <https://www.eia.gov/energyexplained/use-of-energy/electricity-use-in-homes.php>
+
+[^3]: seaborn: statistical data visualization, <https://seaborn.pydata.org/index.html>
+
+[^4]: Group by: split-apply-combine, <https://pandas.pydata.org/pandas-docs/stable/user_guide/groupby.html>
