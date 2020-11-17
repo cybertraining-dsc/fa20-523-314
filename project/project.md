@@ -120,7 +120,7 @@ For measuring the accuracy of the model, the main data is split into train and t
 Categorical variables and numeric variables are separated and processed in pipelines separately. Later these two pipelines are joined and modelled used Linear regression. 
 
 
-## 8. Project Timeline:
+## 8. Project Timeline
 
  * EDA and preprocessing - 11/09/2020
  * First set of result    - 11/11/2020
