@@ -14,7 +14,7 @@ Siny P. Raphel, [fa20-523-314](https://github.com/cybertraining-dsc/fa20-523-314
 
 ## Abstract
 
-Electricity is an inevitable part of our day today life. Most of the electric service providers like duke, dominion provide customers their consumption data so that customers are aware of their usages. Some providers give predictions on their future usages so that they are prepared. This project is based on the dataset Residential Power Usage 3 years data in Kaggle datasets[^1]. The dataset contains data of hourly power consumption of a 2 storied house in Houston, Texas from 01-06-2016 to August 2020. It includes data during the Covid-19 lockdown and are marked as well. We are planning to build a model to predict future usage from available data. 
+Electricity is an inevitable part of our day today life. Most of the electric service providers like duke, dominion provide customers their consumption data so that customers are aware of their usages. Some providers give predictions on their future usages so that they are prepared. This project is based on the dataset Residential Power Usage 3 years data in Kaggle datasets. The dataset contains data of hourly power consumption of a 2 storied house in Houston, Texas from 01-06-2016 to August 2020. It includes data during the Covid-19 lockdown and are marked as well. We are planning to build a model to predict future usage from available data. 
 
 Contents
 
@@ -55,7 +55,7 @@ This dataset is chosen because,
 
 ## 4. Datasets
 
-Data is spread across two csv files.
+Data is spread across two csv files[^1].
 
 *	`power_usage_2016_to_2020.csv`
 
@@ -100,13 +100,13 @@ Here we analyse different features, their relation with each other and target.
 
 **Figure 5:** Average power usage by day of the week
 
-In Figure 5, the average power usage by the day of the week is plotted. It is analyzed that Saturday and Friday has the most usage compared to other days of the week. Similarly, from Figure 6, there is a huge dip in power usage during vacation. Other three occasions like covid lockdown, weekend and weekdays have almost same power usage, even though consumption during weekends outweigh.
+In Figure 5, the average power usage by the day of the week is plotted[^3]. It is analyzed that Saturday and Friday has the most usage compared to other days of the week. Similarly, from Figure 6, there is a huge dip in power usage during vacation. Other three occasions like covid lockdown, weekend and weekdays have almost same power usage, even though consumption during weekends outweigh.
 
 ![Figure 6](https://github.com/cybertraining-dsc/fa20-523-314/raw/main/project/images/tod.png)
 
 **Figure 6:** Average power usage by type of the day
 
-In Figure 7, we compare the monthly power consumption for three years - 2018, 2019, 2020. The overall power usage in 2019 is less compared to 2018. But in 2020 may be due to Covid-lockdown the power consumption shoots. Also, power consumtion peaks in the months June, July and August. 
+In Figure 7, we compare the monthly power consumption for three years - 2018, 2019, 2020[^4]. The overall power usage in 2019 is less compared to 2018. But in 2020 may be due to Covid-lockdown the power consumption shoots. Also, power consumtion peaks in the months June, July and August. 
 
 ![Figure 7](https://github.com/cybertraining-dsc/fa20-523-314/raw/main/project/images/monthly_power.png)
 
