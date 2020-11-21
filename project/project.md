@@ -2,6 +2,7 @@
 
 - [ ] Please improve the reference section with a couple more references. 
 - [ ] Please complete the conclusion section 
+- [ ] Planing section included implies paper is not finished
 
 [![Check Report](https://github.com/cybertraining-dsc/fa20-523-314/workflows/Check%20Report/badge.svg)](https://github.com/cybertraining-dsc/fa20-523-314/actions)
 [![Status](https://github.com/cybertraining-dsc/fa20-523-314/workflows/Status/badge.svg)](https://github.com/cybertraining-dsc/fa20-523-314/actions)
