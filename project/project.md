@@ -11,7 +11,7 @@ Siny P. Raphel, [fa20-523-314](https://github.com/cybertraining-dsc/fa20-523-314
 
 ## Abstract
 
-We are living in a technology-driven world. New innovations make human life easier. As the science advances, the usage of electrical and electronic gadgets are leaping. This leads to the shoot up of power consumption. Weather plays an important role in the power usage. Even the outbreak of Covid-19 has impacted daily power utilization. Similarly, many factors influence the use of electricity driven appliances at homes. Monitoring these factors and consolidating will result in humungous amount of data. But analyzing this data will help to keep track of power consumption. This system provides a prediction of usage of electric power at residences in the future and will enable people to plan ahead of time and not surprised by the monthly electricity bill.  
+We are living in a technology-driven world. New innovations make human life easier. As the science advances, the usage of electrical and electronic gadgets are leaping. This leads to the shoot up of power consumption. Weather plays an important role in the power usage. Even the outbreak of Covid-19 has impacted daily power utilization. Similarly, many factors influence the use of electricity driven appliances at homes. Monitoring these factors and consolidating will result in humungous amount of data. But analyzing this data will help to keep track of power consumption. This system provides a prediction of usage of electric power at residences in the future and will enable people to plan ahead of time and not surprised by the monthly electricity bill.
 
 Contents
 
@@ -23,17 +23,17 @@ Contents
 
 ## 1. Introduction
 
-Electricity is an inevitable part of our day-to-day life. The residential power sector consumes about one-fifth of the total energy in the U.S. economy[^1]. Most of the appliances in a household uses electricity for its working. The usage of electricity in a residence depends on the standard of living of the country, weather conditions, family size, type of the residence etc.[^2]. Most of the houses in USA are equipped with lightings and refrigerators using electric power. The usage of air conditioners is also increasing. From Figure 1, we can see that the top three categories for energy consumption are air conditioning, space heating, water heating as of 2015.
+Electricity is an inevitable part of our day-to-day life. The residential power sector consumes about one-fifth of the total energy in the U.S. economy[^1]. Most of the appliances in a household uses electricity for its working. The usage of electricity in a residence depends on the standard of living of the country, weather conditions, family size, type of the residence etc[^2]. Most of the houses in USA are equipped with lightings and refrigerators using electric power. The usage of air conditioners is also increasing. From Figure 1, we can see that the top three categories for energy consumption are air conditioning, space heating, water heating as of 2015.
 
 ![Figure 1](https://github.com/cybertraining-dsc/fa20-523-314/raw/main/project/images/chart.png)
 
 **Figure 1:** Residential electricity consumption by end use, 2015[^3].
 
-Climate change is one of the biggest challenges in our current time. As a result, temperatures are rising. Therefore, in order to analyze energy consumption, understanding weather variations are critical[^4]. As the temperature rises, use of air conditioners are also rising. As shown in Figure 1, air conditioning is the primary source of power consumer in households. Weather change has also resulted in drop of temperatures and variation in humidity. These results in secondary power consumers. 
+Climate change is one of the biggest challenges in our current time. As a result, temperatures are rising. Therefore, in order to analyze energy consumption, understanding weather variations are critical[^4]. As the temperature rises, use of air conditioners are also rising. As shown in Figure 1, air conditioning is the primary source of power consumer in households. Weather change has also resulted in drop of temperatures and variation in humidity. These results in secondary power consumers.
 
-Our world is currently facing an epidemic. Most of the countries had months of lockdown periods. During lockdown period the energy consumption of residences spiked. 
+Our world is currently facing an epidemic. Most of the countries had months of lockdown periods. During lockdown period the energy consumption of residences spiked.
 
-Most of the electric service providers like duke, dominion provide customers their consumption data so that customers are aware of their usages. Some providers give predictions on their future usages so that they are prepared. 
+Most of the electric service providers like duke, dominion provide customers their consumption data so that customers are aware of their usages. Some providers give predictions on their future usages so that they are prepared.
 
 ## 2. Reason to choose this dataset
 
@@ -116,18 +116,18 @@ Categorical variables and numeric variables are separated and processed in pipel
 ## 7. Conclusion
 
 As importance of electricity is increasing, the need to know how or where the power usage increase should also be understood. The model helps to predict the power usage when a set of parameters like weather conditions, weekdays, type of days etc are provided. 
-Since the output is power consumption in kWh, we selected linear regression for modelling. In the initial setup the model produced a test accuracy of 44.6%. 
+Since the output is power consumption in kWh, we selected linear regression for modelling. In the initial setup the model produced a test accuracy of 44.6%.
  
 ## 8. References
 
-[^1]: Jia Li and Richard E. Just, “Modeling household energy consumption and adoption of energy efficient technology”, Energy Economics, vol. 72, pp. 404-415, 2018.
+[^1]: Jia Li and Richard E. Just, "Modeling household energy consumption and adoption of energy efficient technology", Energy Economics, vol. 72, pp. 404-415, 2018.
 Available: <https://www.sciencedirect.com/science/article/pii/S0140988318301440#bbb0180>
 
 [^2]: "Domestic Power Consumption", [Online resource] <https://en.wikipedia.org/wiki/Domestic_energy_consumption>
 
 [^3]: "Use of energy explained - Energy use in homes", [Online resource] <https://www.eia.gov/energyexplained/use-of-energy/electricity-use-in-homes.php>
 
-[^4]: Yating Li, William A. Pizer, and Libo Wu, “Climate change and residential electricity consumption in the Yangtze River Delta, China”, Research article, Available: https://www.pnas.org/content/116/2/472#ref-1
+[^4]: Yating Li, William A. Pizer, and Libo Wu, "Climate change and residential electricity consumption in the Yangtze River Delta, China", Research article, Available: <https://www.pnas.org/content/116/2/472#ref-1>
 
 [^5]: Residential Power Usage dataset, <https://www.kaggle.com/srinuti/residential-power-usage-3years-data-timeseries>
 
