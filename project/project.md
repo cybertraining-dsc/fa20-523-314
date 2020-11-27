@@ -1,9 +1,5 @@
 # Residential Power Usage Prediction
 
-- [ ] Please improve the reference section with a couple more references. 
-- [ ] Please complete the conclusion section 
-- [ ] Planing section included implies paper is not finished
-
 [![Check Report](https://github.com/cybertraining-dsc/fa20-523-314/workflows/Check%20Report/badge.svg)](https://github.com/cybertraining-dsc/fa20-523-314/actions)
 [![Status](https://github.com/cybertraining-dsc/fa20-523-314/workflows/Status/badge.svg)](https://github.com/cybertraining-dsc/fa20-523-314/actions)
 Status: in progress
@@ -15,7 +11,7 @@ Siny P. Raphel, [fa20-523-314](https://github.com/cybertraining-dsc/fa20-523-314
 
 ## Abstract
 
-Electricity is an inevitable part of our day today life. Most of the electric service providers like duke, dominion provide customers their consumption data so that customers are aware of their usages. Some providers give predictions on their future usages so that they are prepared. This project is based on the dataset Residential Power Usage 3 years data in Kaggle datasets. The dataset contains data of hourly power consumption of a 2 storied house in Houston, Texas from 01-06-2016 to August 2020. It includes data during the Covid-19 lockdown and are marked as well. We are planning to build a model to predict future usage from available data. 
+We are living in a technology-driven world. New innovations make human life easier. As the science advances, the usage of electrical and electronic gadgets are leaping. This leads to the shoot up of power consumption. Weather plays an important role in the power usage. Even the outbreak of Covid-19 has impacted daily power utilization. Similarly, many factors influence the use of electricity driven appliances at homes. Monitoring these factors and consolidating will result in humungous amount of data. But analyzing this data will help to keep track of power consumption. This system provides a prediction of usage of electric power at residences in the future and will enable people to plan ahead of time and not surprised by the monthly electricity bill.  
 
 Contents
 
@@ -27,36 +23,30 @@ Contents
 
 ## 1. Introduction
 
-Most of the houses in USA are equipped with lightings and refrigerators using electricity. The usage of air conditioners is also increasing. From Figure 1, we can see that top three categories for energy consumption are air conditioning, space heating, water heating as of 2015.
+Electricity is an inevitable part of our day-to-day life. The residential power sector consumes about one-fifth of the total energy in the U.S. economy[^1]. Most of the appliances in a household uses electricity for its working. The usage of electricity in a residence depends on the standard of living of the country, weather conditions, family size, type of the residence etc.[^2]. Most of the houses in USA are equipped with lightings and refrigerators using electric power. The usage of air conditioners is also increasing. From Figure 1, we can see that the top three categories for energy consumption are air conditioning, space heating, water heating as of 2015.
 
 ![Figure 1](https://github.com/cybertraining-dsc/fa20-523-314/raw/main/project/images/chart.png)
 
-**Figure 1:** Residential electricity consumption by end use, 2015[^2].
+**Figure 1:** Residential electricity consumption by end use, 2015[^3].
 
-## 2. Planning
+Climate change is one of the biggest challenges in our current time. As a result, temperatures are rising. Therefore, in order to analyze energy consumption, understanding weather variations are critical[^4]. As the temperature rises, use of air conditioners are also rising. As shown in Figure 1, air conditioning is the primary source of power consumer in households. Weather change has also resulted in drop of temperatures and variation in humidity. These results in secondary power consumers. 
 
-We will be using python to develop the model. Since the expected outputs are real numbers(power consumption in kWh) we might be using linear regression or similar ones. We will try using gradient descent for optimization. Since the weather data has 19 features we might use feature selection methods to select best features that increase the accuracy of the model. 
-The data spread across two files will have to be merged according to date. For that the StartDate feature will have to be first split to date and time. Then the two datasets will have to be merged according to the date only. From the initial inspection of the data, the date feature of datasets have some date format issues which will have to be resolved before starting cleaning. 
+Our world is currently facing an epidemic. Most of the countries had months of lockdown periods. During lockdown period the energy consumption of residences spiked. 
 
-In this project we will be planning the following steps:
+Most of the electric service providers like duke, dominion provide customers their consumption data so that customers are aware of their usages. Some providers give predictions on their future usages so that they are prepared. 
 
-1.	Analyze and clean the data
-2.	Visualize the data- study the relationships between features etc.
-3.	Plan one or two algorithms that can be used to model
-4.  Optimize or feature selection of features
-5.	Calculate accuracy of each model
-6.	Conclusion on which algorithm will be best suited to use and the reason for it.
-
-## 3. Reason to choose this dataset
+## 2. Reason to choose this dataset
 
 This dataset is chosen because,
 
-1.	There were datasets similar to this one. But this one has latest power usage data till August this year.
+1.	There were datasets similar to this one. But this one has latest power usage data till August 2020.
 2.	It has marked covid lockdown, vacations, weekdays and weekends which is a challenge for prediction.
 
-## 4. Datasets
+## 3. Datasets
 
-Data is spread across two csv files[^1].
+This project is based on the dataset Residential Power Usage 3 years data in Kaggle datasets[^5]. The dataset contains data of hourly power consumption of a 2 storied house in Houston, Texas from 01-06-2016 to August 2020. It includes data during the Covid-19 lockdown and are marked as well. We are planning to build a model to predict future usage from available data.
+
+Data is spread across two csv files.
 
 *	`power_usage_2016_to_2020.csv`
 
@@ -89,11 +79,11 @@ Units of features are given as follows:
 * Pressure       - Hg
 * Precipitation  – inch
 
-## 5. Merge datasets
+## 4. Merge datasets
 
 The 'StartDate' feature of power_usage dataset and 'Date' feature of the weather dataset are used as key to merge the two datasets. But the format of both features is different. StartDate feature is the combination of date and hour. Whereas, 'Date' feature of weather is just the date. So first 'StartDate' column is split into 'Date' and 'Hour' columns. Since the 'StartDate' column is in Pandas Period type, the function strftime() is used for converting to the required format.
 
-## 6. Exploratory Data Analysis
+## 5. Exploratory Data Analysis
 
 Here we analyse different features, their relation with each other and target. 
 
@@ -113,34 +103,34 @@ In Figure 7, we compare the monthly power consumption for three years - 2018, 20
 
 **Figure 7:** Average power usage per month for three years
 
-## 7. Modelling
+## 6. Modelling
 
-### 7.1 Split Data
+### 6.1 Split Data
 
 For measuring the accuracy of the model, the main data is split into train and test. 20% of data is selected as test data and the remaining 80% is the train data. The proportion of notes(vacation, week day, weekend and covide lockdown) are different. Therefore, we stratify the data according to notes column. After split, train data has 28761 rows and test data has 7191 rows. 
 
-### 7.2 Pipelines
+### 6.2 Pipelines
 
 Categorical variables and numeric variables are separated and processed in pipelines separately. Later these two pipelines are joined and modelled used Linear regression. 
-
-
-## 8. Project Timeline
-
- * EDA and preprocessing - 11/09/2020
- * First set of result    - 11/11/2020
- * Hyperparameter tuning, pipelines/ final setup - 11/15/2020
  
-## 9. Conclusion
+## 7. Conclusion
 
 As importance of electricity is increasing, the need to know how or where the power usage increase should also be understood. The model helps to predict the power usage when a set of parameters like weather conditions, weekdays, type of days etc are provided. 
 Since the output is power consumption in kWh, we selected linear regression for modelling. In the initial setup the model produced a test accuracy of 44.6%. 
  
-## 10. References
+## 8. References
 
-[^1]: Residential Power Usage dataset, <https://www.kaggle.com/srinuti/residential-power-usage-3years-data-timeseries>
+[^1]: Jia Li and Richard E. Just, “Modeling household energy consumption and adoption of energy efficient technology”, Energy Economics, vol. 72, pp. 404-415, 2018.
+Available: <https://www.sciencedirect.com/science/article/pii/S0140988318301440#bbb0180>
 
-[^2]: Use of energy explained - Energy use in homes, <https://www.eia.gov/energyexplained/use-of-energy/electricity-use-in-homes.php>
+[^2]: "Domestic Power Consumption", [Online resource] <https://en.wikipedia.org/wiki/Domestic_energy_consumption>
 
-[^3]: seaborn: statistical data visualization, <https://seaborn.pydata.org/index.html>
+[^3]: "Use of energy explained - Energy use in homes", [Online resource] <https://www.eia.gov/energyexplained/use-of-energy/electricity-use-in-homes.php>
 
-[^4]: Group by: split-apply-combine, <https://pandas.pydata.org/pandas-docs/stable/user_guide/groupby.html>
+[^4]: Yating Li, William A. Pizer, and Libo Wu, “Climate change and residential electricity consumption in the Yangtze River Delta, China”, Research article, Available: https://www.pnas.org/content/116/2/472#ref-1
+
+[^5]: Residential Power Usage dataset, <https://www.kaggle.com/srinuti/residential-power-usage-3years-data-timeseries>
+
+[^6]: seaborn: statistical data visualization, <https://seaborn.pydata.org/index.html>
+
+[^7]: Group by: split-apply-combine, <https://pandas.pydata.org/pandas-docs/stable/user_guide/groupby.html>
