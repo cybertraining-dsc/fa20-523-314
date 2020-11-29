@@ -48,7 +48,7 @@ This dataset is chosen because,
 
 This project is based on the dataset, _Residential Power Usage 3 years data_ in Kaggle datasets[^5]. The dataset contains data of hourly power consumption of a 2 storied house in Houston, Texas from 01-06-2016 to August 2020 and also weather conditions of each day like temperatures, humidity wind etc of that area. Each day is marked whether it is a weekday, weekend, vacation or COVID-19 lockdown. 
 
-The project is intending to build a model to predict future power consumption of a house with similar environments from the available data. Python is used for the development and since the expected output is a continuous variable, linear regression is considered for baseline model. Later the performance of the base model is compared to one or two other models like tuned linear regression, gradient boosting, Light Gbm or random forest.
+The project is intending to build a model to predict future power consumption of a house with similar environments from the available data. Python[^8] is used for the development and since the expected output is a continuous variable, linear regression is considered for baseline model. Later the performance of the base model is compared to one or two other models like tuned linear regression, gradient boosting, Light Gbm or random forest.
 
 Data is spread across two csv files.
 
@@ -95,17 +95,17 @@ The data has to be preprocessed before modelling for predictions.
 
 ### 4.1 Data download and load
 
-The data in this project is directly downloaded from _Kaggle_. The downloaded file is then unzipped and loaded to two dataframes using python codes. For more detailed explanation and codes for download and load of data, see ![python code]<https://github.com/cybertraining-dsc/fa20-523-314/blob/main/project/code/residential_power_usage_prediction.ipynb> _Download datasets_ and _Load datasets_ sections.
+The data in this project is directly downloaded from _Kaggle_. The downloaded file is then unzipped and loaded to two dataframes using python codes. For more detailed explanation and codes for download and load of data, see [python code](https://github.com/cybertraining-dsc/fa20-523-314/blob/main/project/code/residential_power_usage_prediction.ipynb) _Download datasets_ and _Load datasets_ sections.
 
 ### 4.2 Data descriptive analysis
 
 The data loaded has to be analysed properly before it can be preprocessed. Analysis is made on the existance of missing values, range of each features etc. On analysis, it is determined that there are no missing values and the date format in both tables are different. The _StartDate_ feature of power_usage dataset and _Date_ feature of the weather dataset are to be used as key to merge the two datasets. But the format of both features are different. StartDate feature is the combination of date and hour. Whereas, _Date_ feature of weather is just the date. Hence, these issues will have to be taken care of before merging data. 
 
-## 4.3 Preprocessing data
+### 4.3 Preprocessing data
 
 In this step, the column name _Values (kWh)_  is renamed to _Value_ and also date format issue is addressed. First StartDate column is split into Date and Hour columns. Since the StartDate column is in Pandas Period type, the function strftime() is used for converting to the required format.
 
-## 4.4 Merge datasets
+### 4.4 Merge datasets
 
 For proper analysis of data, it is critical that the analyst should be able to analyse the relationships of each features with respect to the target feature(Value in kWh in this project). Therefore, both power_usage and weather tables are merged with respect to Date column. The resulting table has a total of 35952 instances and 22 features.
 
@@ -146,17 +146,19 @@ Since the output is power consumption in kWh, we selected linear regression for 
  
 ## 8. References
 
-[^1]: Jia Li and Richard E. Just, "Modeling household energy consumption and adoption of energy efficient technology", Energy Economics, vol. 72, pp. 404-415, 2018.
+[^1]: Jia Li and Richard E. Just, Modeling household energy consumption and adoption of energy efficient technology, Energy Economics, vol. 72, pp. 404-415, 2018.
 Available: <https://www.sciencedirect.com/science/article/pii/S0140988318301440#bbb0180>
 
-[^2]: "Domestic Power Consumption", [Online resource] <https://en.wikipedia.org/wiki/Domestic_energy_consumption>
+[^2]: Domestic Power Consumption, [Online resource] <https://en.wikipedia.org/wiki/Domestic_energy_consumption>
 
-[^3]: "Use of energy explained - Energy use in homes", [Online resource] <https://www.eia.gov/energyexplained/use-of-energy/electricity-use-in-homes.php>
+[^3]: Use of energy explained - Energy use in homes, [Online resource] <https://www.eia.gov/energyexplained/use-of-energy/electricity-use-in-homes.php>
 
-[^4]: Yating Li, William A. Pizer, and Libo Wu, "Climate change and residential electricity consumption in the Yangtze River Delta, China", Research article, Available: <https://www.pnas.org/content/116/2/472#ref-1>
+[^4]: Yating Li, William A. Pizer, and Libo Wu, Climate change and residential electricity consumption in the Yangtze River Delta, China, Research article, Available: <https://www.pnas.org/content/116/2/472#ref-1>
 
 [^5]: Residential Power Usage dataset, <https://www.kaggle.com/srinuti/residential-power-usage-3years-data-timeseries>
 
 [^6]: seaborn: statistical data visualization, <https://seaborn.pydata.org/index.html>
 
 [^7]: Group by: split-apply-combine, <https://pandas.pydata.org/pandas-docs/stable/user_guide/groupby.html>
+
+[^8]: Residential Power Usage Prediction script, <https://github.com/cybertraining-dsc/fa20-523-314/blob/main/project/code/residential_power_usage_prediction.ipynb>
