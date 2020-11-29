@@ -117,7 +117,8 @@ Here we analyse different features, their relation with each other and target.
 
 **Figure 5:** Average power usage by day of the week
 
-In Figure 5, the average power usage by the day of the week is plotted[^3]. It is analyzed that Saturday and Friday has the most usage compared to other days of the week. Similarly, from Figure 6, there is a huge dip in power usage during vacation. Other three occasions like covid lockdown, weekend and weekdays have almost same power usage, even though consumption during weekends outweigh.
+In Figure 5, the average power usage by the day of the week is plotted[^3]. It is analyzed that Saturday and Friday has the most usage compared to other days of the week. Since day of th week represents values Sunday-Saturday, we can consider it as a categorical feature.
+Similarly, from Figure 6, there is a huge dip in power usage during vacation. Other three occasions like covid lockdown, weekend and weekdays have almost same power usage, even though consumption during weekends outweigh.
 
 ![Figure 6](https://github.com/cybertraining-dsc/fa20-523-314/raw/main/project/images/tod.png)
 
@@ -129,6 +130,12 @@ In Figure 7, we compare the monthly power consumption for three years - 2018, 20
 
 **Figure 7:** Average power usage per month for three years
 
+![Figure 8](https://github.com/cybertraining-dsc/fa20-523-314/raw/main/project/images/corr_plot.png)
+
+**Figure 8:** Correlation plot between features
+
+The correlation plot in Figure 8, depicts the inter-correlation between features. We can see that features like temperature, dew and pressure has high correlation to our target feature. Also different temperatures and dew features are inter-correlated. Therefore, all the intercorrelated features except for temp_avg can be dropped during feature selection. 
+
 ## 6. Modelling
 
 ### 6.1 Split Data
@@ -137,7 +144,16 @@ For measuring the accuracy of the model, the main data is split into train and t
 
 ### 6.2 Pipelines
 
-Categorical variables and numeric variables are separated and processed in pipelines separately. Later these two pipelines are joined and modelled used Linear regression. 
+Categorical variables and numeric variables are separated and processed in pipelines separately.
+Categorical features are one hot encoded before feeding to the model. Similarly, numerical features are standardized before modelling. Later these two pipelines are joined and modelled used Linear regression and other models. 
+
+### Baseline Linear Regression model
+
+Since the expected target is a real number, we use linear regression as a baseline model. For baseline model, we are not hyperparameter tuning. The accuracy score of baseline model is 44.1% for training set and 44.6 for test set. 
+
+## Linear Regression model with predictors
+
+For this model we are implementing feature selection and hyperparameter tuning. As we analysed in exploratory data analysis, some features have strong inter-correlation and these features are dropped. The parameters for linear regression are hypertuned and modelled in GridsearchCV of sklearn package. 
  
 ## 7. Conclusion
 
