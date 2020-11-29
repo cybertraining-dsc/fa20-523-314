@@ -31,57 +31,83 @@ Electricity is an inevitable part of our day-to-day life. The residential power 
 
 Climate change is one of the biggest challenges in our current time. As a result, temperatures are rising. Therefore, in order to analyze energy consumption, understanding weather variations are critical[^4]. As the temperature rises, use of air conditioners are also rising. As shown in Figure 1, air conditioning is the primary source of power consumer in households. Weather change has also resulted in drop of temperatures and variation in humidity. These results in secondary power consumers.
 
-Our world is currently facing an epidemic. Most of the countries had months of lockdown periods. During lockdown period the energy consumption of residences spiked.
+Even though weather plays an important role in power usage, factors like household income, age of the residents, family type etc also influence consumption. During holidays many people tend to spend time outside which reduces power utilization at their homes. Similarly, during weekend, since most people have work off, the appliances will be frequently consumed compared to weekdays when they go to work. Our world is currently facing an epidemic. Most of the countries had months of lockdown periods. Schools and many work places were closed. People were not allowed to go out and so they were stuck at their homes. As a result, power expending reduced drastically everywhere other than residences. But during lockdown period the energy consumption of residences spiked.
 
 Most of the electric service providers like duke, dominion provide customers their consumption data so that customers are aware of their usages. Some providers give predictions on their future usages so that they are prepared.
 
 ## 2. Reason to choose this dataset
 
+There were many datasets on residential power usage analysis in Kaggle itself. But most of them were three or four years old. This dataset has the recent data of power consumptions together with weather data of each day. Since the pandemic hit the world in 2019-2020, the availability of recent data is considered to be significant for the analysis. 
+
 This dataset is chosen because,
 
-1.	There were datasets similar to this one. But this one has latest power usage data till August 2020.
-2.	It has marked covid lockdown, vacations, weekdays and weekends which is a challenge for prediction.
+1.	It has the latest power usage data - till August 2020.
+2.	It has marked covid lockdown, vacations, weekdays and weekends which is a challenge for the prediction.
 
 ## 3. Datasets
 
-This project is based on the dataset Residential Power Usage 3 years data in Kaggle datasets[^5]. The dataset contains data of hourly power consumption of a 2 storied house in Houston, Texas from 01-06-2016 to August 2020. It includes data during the Covid-19 lockdown and are marked as well. We are planning to build a model to predict future usage from available data.
+This project is based on the dataset, _Residential Power Usage 3 years data_ in Kaggle datasets[^5]. The dataset contains data of hourly power consumption of a 2 storied house in Houston, Texas from 01-06-2016 to August 2020 and also weather conditions of each day like temperatures, humidity wind etc of that area. Each day is marked whether it is a weekday, weekend, vacation or COVID-19 lockdown. 
+
+The project is intending to build a model to predict future power consumption of a house with similar environments from the available data. Python is used for the development and since the expected output is a continuous variable, linear regression is considered for baseline model. Later the performance of the base model is compared to one or two other models like tuned linear regression, gradient boosting, Light Gbm or random forest.
 
 Data is spread across two csv files.
 
-*	`power_usage_2016_to_2020.csv`
+*	power_usage_2016_to_2020.csv
 
-This file contains basic details of the data like startdate with hour, value of power consumption in kwh, day of the week and notes. It has 4 features and 35953 instances. 
+This file depicts the hourly electricity usage of the house for three years, from 2016 to 2020. It contains basic details like startdate with hour, value of power consumption in kwh, day of the week and notes. It has 4 features and 35953 instances. 
 
 ![Figure 2](https://github.com/cybertraining-dsc/fa20-523-314/raw/main/project/images/fig-1.png)
 
 **Figure 2:** First five rows of power_usage_2016_to_2020 data
 
-Day of the week is an integer value with 0 being Monday. Notes gives us details like whether that day is weekend, weekday, covid lockdown or vacation. The Figure 2 shows retrieval and first few rows of the data.
+Figure 2 provides a snapshot of the first few rows of the data. Day of the week is an integer value with 0 being Monday. The column _notes_ lay out details like whether that day was weekend, weekday, covid lockdown or vacation, as shown in Figure 3.
 
 ![Figure 3](https://github.com/cybertraining-dsc/fa20-523-314/raw/main/project/images/fig-2.png)
 
-**Figure 3:** Details in "notes" column
+**Figure 3:** Details in notes column
 
 *	weather_2016_2020_daily.csv
 
-This file contains the weather conditions of that particular day. It has 19 features and 1553 instances. Figure 4 shows retrieval and first few rows and columns of this file.
+The second file or the weather file imparts the weather conditions of that particular area on each day. It has 19 features and 1553 instances. Figure 4 is the snapshot of the first few rows and columns of this file.
 
 ![Figure 4](https://github.com/cybertraining-dsc/fa20-523-314/raw/main/project/images/fig-3.png)
 
 **Figure 4:** First few rows of weather_2016_2020_daily data
 
-Units of features are given as follows:
+Each feature in this data has different units and the units of the features are given in Table 1.
 
-* Temperature    - F deg
-* Dew Point      - F deg
-* Humidity       - %age
-* Wind           - mph
-* Pressure       - Hg
-* Precipitation  – inch
+**Table 1:** Feature units
 
-## 4. Merge datasets
+| Feature names| Units |
+| ------------ | ----- |
+| Temperature  | F deg |
+| Dew Point    | F deg |
+| Humidity     | %age  |
+| Wind         | mph   |
+| Pressure     | Hg    |
+| Precipitation| inch  |
 
-The 'StartDate' feature of power_usage dataset and 'Date' feature of the weather dataset are used as key to merge the two datasets. But the format of both features is different. StartDate feature is the combination of date and hour. Whereas, 'Date' feature of weather is just the date. So first 'StartDate' column is split into 'Date' and 'Hour' columns. Since the 'StartDate' column is in Pandas Period type, the function strftime() is used for converting to the required format.
+Weather file has additional features like _date_ and _day_ of the date.
+
+## 4. Data preprocessing
+
+The data has to be preprocessed before modelling for predictions.
+
+### 4.1 Data download and load
+
+The data in this project is directly downloaded from _Kaggle_. The downloaded file is then unzipped and loaded to two dataframes using python codes. For more detailed explanation and codes for download and load of data, see ![python code]<https://github.com/cybertraining-dsc/fa20-523-314/blob/main/project/code/residential_power_usage_prediction.ipynb> _Download datasets_ and _Load datasets_ sections.
+
+### 4.2 Data descriptive analysis
+
+The data loaded has to be analysed properly before it can be preprocessed. Analysis is made on the existance of missing values, range of each features etc. On analysis, it is determined that there are no missing values and the date format in both tables are different. The _StartDate_ feature of power_usage dataset and _Date_ feature of the weather dataset are to be used as key to merge the two datasets. But the format of both features are different. StartDate feature is the combination of date and hour. Whereas, _Date_ feature of weather is just the date. Hence, these issues will have to be taken care of before merging data. 
+
+## 4.3 Preprocessing data
+
+In this step, the column name _Values (kWh)_  is renamed to _Value_ and also date format issue is addressed. First StartDate column is split into Date and Hour columns. Since the StartDate column is in Pandas Period type, the function strftime() is used for converting to the required format.
+
+## 4.4 Merge datasets
+
+For proper analysis of data, it is critical that the analyst should be able to analyse the relationships of each features with respect to the target feature(Value in kWh in this project). Therefore, both power_usage and weather tables are merged with respect to Date column. The resulting table has a total of 35952 instances and 22 features.
 
 ## 5. Exploratory Data Analysis
 
