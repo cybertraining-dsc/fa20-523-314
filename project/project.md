@@ -193,21 +193,24 @@ cloudmesh.common benchmark and stopwatch framework are used to monitor and recor
 
 **Table 2:** StopWatch recordings
 
-| Name                         | Status   |     Time |      Sum | Start               | tag   | Node         | User   | OS    | Version                             |
-|------------------------------|----------|----------|----------|---------------------|-------|--------------|--------|-------|-------------------------------------|
-| Data preprocessing           | ok       |   72.986 |  146.383 | 2020-11-30 08:10:16 |       | 756da8d039ed | collab | Linux | #1 SMP Thu Jul 23 08:00:38 PDT 2020 |
-| Baseline Linear Regression   | ok       |    2.747 |    2.747 | 2020-11-30 08:11:31 |       | 756da8d039ed | collab | Linux | #1 SMP Thu Jul 23 08:00:38 PDT 2020 |
-| Linear Regression            | ok       |    5.288 |   15.77  | 2020-11-30 08:11:34 |       | 756da8d039ed | collab | Linux | #1 SMP Thu Jul 23 08:00:38 PDT 2020 |
-| Gradient Boosting            | ok       |  249.175 |  556.847 | 2020-11-30 08:11:39 |       | 756da8d039ed | collab | Linux | #1 SMP Thu Jul 23 08:00:38 PDT 2020 |
-| XGBoost                      | ok       | 2947.85  | 6196.89  | 2020-11-30 08:15:48 |       | 756da8d039ed | collab | Linux | #1 SMP Thu Jul 23 08:00:38 PDT 2020 |
-| Light GBM                    | ok       |  800.339 | 1564.25  | 2020-11-30 09:04:56 |       | 756da8d039ed | collab | Linux | #1 SMP Thu Jul 23 08:00:38 PDT 2020 |
+| Name                       | Status   |     Time |      Sum | Start               | tag   | Node         | User   | OS    | Version                             |
+|----------------------------|----------|----------|----------|---------------------|-------|--------------|--------|-------|-------------------------------------|
+| Data download              | ok       |    2.652 |    2.652 | 2020-11-30 12:43:50 |       | a1f46a7ed3c2 | collab | Linux | #1 SMP Thu Jul 23 08:00:38 PDT 2020 |
+| Data load                  | ok       |    0.074 |    0.074 | 2020-11-30 12:43:53 |       | a1f46a7ed3c2 | collab | Linux | #1 SMP Thu Jul 23 08:00:38 PDT 2020 |
+| Data preprocessing         | ok       |   67.618 |   67.618 | 2020-11-30 12:43:53 |       | a1f46a7ed3c2 | collab | Linux | #1 SMP Thu Jul 23 08:00:38 PDT 2020 |
+| Baseline Linear Regression | ok       |    2.814 |    2.814 | 2020-11-30 12:45:03 |       | a1f46a7ed3c2 | collab | Linux | #1 SMP Thu Jul 23 08:00:38 PDT 2020 |
+| Linear Regression          | ok       |    5.581 |    5.581 | 2020-11-30 12:45:06 |       | a1f46a7ed3c2 | collab | Linux | #1 SMP Thu Jul 23 08:00:38 PDT 2020 |
+| Gradient Boosting          | ok       |  244.868 |  244.868 | 2020-11-30 12:45:12 |       | a1f46a7ed3c2 | collab | Linux | #1 SMP Thu Jul 23 08:00:38 PDT 2020 |
+| XGBoost                    | ok       | 2946.7   | 2946.7   | 2020-11-30 12:49:16 |       | a1f46a7ed3c2 | collab | Linux | #1 SMP Thu Jul 23 08:00:38 PDT 2020 |
+| Light GBM                  | ok       |  770.967 |  770.967 | 2020-11-30 13:38:23 |       | a1f46a7ed3c2 | collab | Linux | #1 SMP Thu Jul 23 08:00:38 PDT 2020 |
 
-For the baseline model, the RMSE values were high and R2 scores was small compared to all other regression models. The hyperparameter tuned linear regression model scores are better compared to basline model. But other three models outweigh both linear models. XGBoost has the lowest RMSE and highest R2 score of all other models. But the time taken for execution is too long. Therefore, XGBoost is computationally expensive which lead us to ignore its scores. Gradient boosting and Ligh GBM have similar scores and hence the time taken for execution has to be considered as the deciding factor here. Gradient boosting completed 135 fits in 249.175 seconds whereas LightGBM took around 1564.25 seconds for executing 1250 fits. Since per fit execution time for Light GBM is too small, we consider Light GBM as the best model for predicting daily power usage of a residence with similar background conditions.
+For the baseline model, the RMSE values were high and R2 scores was small compared to all other regression models. The hyperparameter tuned linear regression model scores are better compared to basline model. But other three models outweigh both linear models. XGBoost has the lowest RMSE and highest R2 score of all other models. But the time taken for execution is too long. Therefore, XGBoost is computationally expensive which lead us to ignore its scores. Gradient boosting and Ligh GBM have similar scores and hence the time taken for execution has to be considered as the deciding factor here. Gradient boosting completed 135 fits in 244.868 seconds whereas LightGBM took around 770.967 seconds for executing 3645 fits and then prediction. Since per fit execution time for Light GBM is too small, we consider Light GBM as the best model for predicting daily power usage of a residence with similar background conditions.
+
+The RMSE scores for Light GBM are .2896 for train and .2910 for test. The R2 score for test set is .6526.
  
 ## 7. Conclusion
 
-As importance of electricity is increasing, the need to know how or where the power usage increase should also be understood. The model helps to predict the power usage when a set of parameters like weather conditions, weekdays, type of days etc are provided. 
-Since the output is power consumption in kWh, we selected regression for modelling and prediction. After analysing the results, we concluded that the performance of Light GBM model is better and faster compared to all other models that we experimented.
+As the importance of electricity is increasing, the need to know how or where the power usage increase will be a life saver for the electricity consumers. In this project, the daily power consumption of a house is analyzed and modelled for a prediction of electricity usage for residences with similar environments. The model considered a set of parameters like weather conditions, weekdays, type of days etc. for prediction. Since the output is power consumption in kWh, we selected regression for modelling and prediction. Experiments are conducted on five regression models. After analyzing the experiment results, we concluded that the performance of Light GBM model is better and faster compared to all other models. 
 
 ## 8. Acknowledments
 
