@@ -117,14 +117,14 @@ Here we analyse different features, their relation with each other and target.
 
 **Figure 5:** Average power usage by day of the week
 
-In Figure 5, the average power usage by the day of the week is plotted[^3]. It is analyzed that Saturday and Friday has the most usage compared to other days of the week. Since day of th week represents values Sunday-Saturday, we can consider it as a categorical feature.
+In Figure 5, the average power usage by the day of the week is plotted[^6]. It is analyzed that Saturday and Friday has the most usage compared to other days of the week. Since day of th week represents values Sunday-Saturday, we can consider it as a categorical feature.
 Similarly, from Figure 6, there is a huge dip in power usage during vacation. Other three occasions like covid lockdown, weekend and weekdays have almost same power usage, even though consumption during weekends outweigh.
 
 ![Figure 6](https://github.com/cybertraining-dsc/fa20-523-314/raw/main/project/images/tod.png)
 
 **Figure 6:** Average power usage by type of the day
 
-In Figure 7, we compare the monthly power consumption for three years - 2018, 2019, 2020[^4]. The overall power usage in 2019 is less compared to 2018. But in 2020 may be due to Covid-lockdown the power consumption shoots. Also, power consumtion peaks in the months June, July and August. 
+In Figure 7, we compare the monthly power consumption for three years - 2018, 2019, 2020[^7]. The overall power usage in 2019 is less compared to 2018. But in 2020 may be due to Covid-lockdown the power consumption shoots. Also, power consumtion peaks in the months June, July and August. 
 
 ![Figure 7](https://github.com/cybertraining-dsc/fa20-523-314/raw/main/project/images/monthly_power.png)
 
@@ -157,12 +157,12 @@ MSE is the average of squares of error. The larger the MSE score, the larger the
 
 #### 6.3.2 Root mean squared error(RMSE)
 
-RMSE is the square root of MSE scores. The square root is introduced to make scale of the errors to be the same as the scale of targets. Similar to MSE, the lower scores for RMSE means the better model performance. Therefore, in this project, the models with lower RMSE values will be monitored.
+RMSE is the square root of MSE scores. The square root is introduced to make scale of the errors to be the same as the scale of targets. Similar to MSE, the lower scores for RMSE means the better model performance. Therefore, in this project, the models with lower RMSE values will be monitored[^9].
 
 #### 6.3.3 R-Squared(R2) Score
 
 R2 score is the goodness-of-fit measure. It's a statistical measure that ranges between 0 and 1. R2 score helps the analyst to understand how similar the fitted line is to the data it is fitted to. The closer it is to one, the more likely the model predicts its variance. Similarly, if the score is zero, the model doesn't predict any variance.
-In this project the R2 score of the test data is calculated. The model with highest R2 scores will be considered.
+In this project the R2 score of the test data is calculated. The model with highest R2 scores will be considered[^9].
 
 ### 6.4 Baseline Linear Regression model
 
@@ -189,7 +189,7 @@ Similar to baseline model, the metrics like train RMSE, test RMSE and test R2 sc
 
 Figure 9 documents the performance of all the regression models used. 
 
-cloudmesh.common benchmark and stopwatch framework are used to monitor and record time taken for each steps in this project. The StopWatch recordings are shown in Table 2.
+cloudmesh.common benchmark and stopwatch framework are used to monitor and record time taken for each steps in this project[^10]. Time taken for critical steps like downloading data, loading data, preprocessing data and execution of each models are recorded. The StopWatch recordings are shown in Table 2. StopWatch recordings played an important role in the selection of best model.
 
 **Table 2:** StopWatch recordings
 
@@ -202,12 +202,16 @@ cloudmesh.common benchmark and stopwatch framework are used to monitor and recor
 | XGBoost                      | ok       | 2947.85  | 6196.89  | 2020-11-30 08:15:48 |       | 756da8d039ed | collab | Linux | #1 SMP Thu Jul 23 08:00:38 PDT 2020 |
 | Light GBM                    | ok       |  800.339 | 1564.25  | 2020-11-30 09:04:56 |       | 756da8d039ed | collab | Linux | #1 SMP Thu Jul 23 08:00:38 PDT 2020 |
 
-For the baseline model, the RMSE values were high and R2 scores was small compared to all other regression models. The hyperparameter tuned linear regression model scores are better compared to basline model. But other three models outweigh both linear models. XGBoost has the lowest RMSE and highest R2 score of all other models. But the time taken for execution is too long. Therefore, XGBoost is computationally expensive which lead us to ignore its scores. Gradient boosting and Ligh GBM have similar scores and hence the time taken for execution has to be considered as the deciding factor here. Gradient boosting completed 135 fits in 249.175 seconds whereas LightGBM took around 1564.25 seconds for executing 1250 fits. Since per fit execution time for Light GBM is too small, we consider Light GBM as the best model for predicting daily power usage of a residence with similar background conditions.  
+For the baseline model, the RMSE values were high and R2 scores was small compared to all other regression models. The hyperparameter tuned linear regression model scores are better compared to basline model. But other three models outweigh both linear models. XGBoost has the lowest RMSE and highest R2 score of all other models. But the time taken for execution is too long. Therefore, XGBoost is computationally expensive which lead us to ignore its scores. Gradient boosting and Ligh GBM have similar scores and hence the time taken for execution has to be considered as the deciding factor here. Gradient boosting completed 135 fits in 249.175 seconds whereas LightGBM took around 1564.25 seconds for executing 1250 fits. Since per fit execution time for Light GBM is too small, we consider Light GBM as the best model for predicting daily power usage of a residence with similar background conditions.
  
 ## 7. Conclusion
 
 As importance of electricity is increasing, the need to know how or where the power usage increase should also be understood. The model helps to predict the power usage when a set of parameters like weather conditions, weekdays, type of days etc are provided. 
-Since the output is power consumption in kWh, we selected regression for modelling and prediction. After analysing the results, we concluded that the performance of Light GBM model is better and faster compared to all other models that we experimented.  
+Since the output is power consumption in kWh, we selected regression for modelling and prediction. After analysing the results, we concluded that the performance of Light GBM model is better and faster compared to all other models that we experimented.
+
+## 8. Acknowledments
+
+The author would like to express special thanks to Dr. Geoffrey Fox, Dr. Gregor Von Laszewski and all the associate instructors of Big Data Applications course(FA20-BL-ENGR-E534-11530) offered by Indiana University, Bloomington for the guidance and support throughout the project.
  
 ## 8. References
 
@@ -227,3 +231,7 @@ Available: <https://www.sciencedirect.com/science/article/pii/S0140988318301440#
 [^7]: Group by: split-apply-combine, <https://pandas.pydata.org/pandas-docs/stable/user_guide/groupby.html>
 
 [^8]: Residential Power Usage Prediction script, <https://github.com/cybertraining-dsc/fa20-523-314/blob/main/project/code/residential_power_usage_prediction.ipynb>
+
+[^9]: Mean Square Error & R2 Score Clearly Explained, [Online resource] <https://www.bmc.com/blogs/mean-squared-error-r2-and-variance-in-regression-analysis/>
+
+[^10]: Gregor von Laszewski, Cloudmesh StopWatch and Benchmark from the Cloudmesh Common Library, <https://github.com/cloudmesh/cloudmesh-common>
