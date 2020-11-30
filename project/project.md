@@ -117,14 +117,14 @@ Here we analyse different features, their relation with each other and target.
 
 **Figure 5:** Average power usage by day of the week
 
-In Figure 5, the average power usage by the day of the week is plotted[^3]. It is analyzed that Saturday and Friday has the most usage compared to other days of the week. Since day of th week represents values Sunday-Saturday, we can consider it as a categorical feature.
+In Figure 5, the average power usage by the day of the week is plotted[^6]. It is analyzed that Saturday and Friday has the most usage compared to other days of the week. Since day of th week represents values Sunday-Saturday, we can consider it as a categorical feature.
 Similarly, from Figure 6, there is a huge dip in power usage during vacation. Other three occasions like covid lockdown, weekend and weekdays have almost same power usage, even though consumption during weekends outweigh.
 
 ![Figure 6](https://github.com/cybertraining-dsc/fa20-523-314/raw/main/project/images/tod.png)
 
 **Figure 6:** Average power usage by type of the day
 
-In Figure 7, we compare the monthly power consumption for three years - 2018, 2019, 2020[^4]. The overall power usage in 2019 is less compared to 2018. But in 2020 may be due to Covid-lockdown the power consumption shoots. Also, power consumtion peaks in the months June, July and August. 
+In Figure 7, we compare the monthly power consumption for three years - 2018, 2019, 2020[^7]. The overall power usage in 2019 is less compared to 2018. But in 2020 may be due to Covid-lockdown the power consumption shoots. Also, power consumtion peaks in the months June, July and August. 
 
 ![Figure 7](https://github.com/cybertraining-dsc/fa20-523-314/raw/main/project/images/monthly_power.png)
 
@@ -147,18 +147,74 @@ For measuring the accuracy of the model, the main data is split into train and t
 Categorical variables and numeric variables are separated and processed in pipelines separately.
 Categorical features are one hot encoded before feeding to the model. Similarly, numerical features are standardized before modelling. Later these two pipelines are joined and modelled used Linear regression and other models. 
 
-### Baseline Linear Regression model
+### 6.3 Metrics
 
-Since the expected target is a real number, we use linear regression as a baseline model. For baseline model, we are not hyperparameter tuning. The accuracy score of baseline model is 44.1% for training set and 44.6 for test set. 
+Out target is a continous variable and hence we implement regression models for prediction. In order to determine how accurate a regression model is, we use the following metrics.
 
-## Linear Regression model with predictors
+#### 6.3.1 Mean squared error(MSE)
 
-For this model we are implementing feature selection and hyperparameter tuning. As we analysed in exploratory data analysis, some features have strong inter-correlation and these features are dropped. The parameters for linear regression are hypertuned and modelled in GridsearchCV of sklearn package. 
+MSE is the average of squares of error. The larger the MSE score, the larger the errors are. Models with lower values of MSE is considered to perform well. But, since MSE is the squared value, the scale of target variable and MSE will be different. Therefore, we go for RMSE values.
+
+#### 6.3.2 Root mean squared error(RMSE)
+
+RMSE is the square root of MSE scores. The square root is introduced to make scale of the errors to be the same as the scale of targets. Similar to MSE, the lower scores for RMSE means the better model performance. Therefore, in this project, the models with lower RMSE values will be monitored[^9].
+
+#### 6.3.3 R-Squared(R2) Score
+
+R2 score is the goodness-of-fit measure. It's a statistical measure that ranges between 0 and 1. R2 score helps the analyst to understand how similar the fitted line is to the data it is fitted to. The closer it is to one, the more likely the model predicts its variance. Similarly, if the score is zero, the model doesn't predict any variance.
+In this project the R2 score of the test data is calculated. The model with highest R2 scores will be considered[^9].
+
+### 6.4 Baseline Linear Regression model
+
+Wwe use linear regression as our baseline model. For baseline model, we are not hyperparameter tuning. For baseline model, the train RMSE score was 0.6783 and R2 for test set was 0.4460. These values are then compared to other regression models with hyperparameter tuning. 
+
+### 6.5 Other regression models
+
+After developing a baseline model, we are developing four other regression models and comparing the results. We implement feature selection and hyperparameter tuning. As we analysed in exploratory data analysis, some features have strong inter-correlation and these features are dropped. The parameters for the regression models are hypertuned and modelled in GridsearchCV of sklearn package. 
+
+The models used for prediction are:
+
+* Linear regression with hyperparamter tuning
+* Gradient boosting
+* XGBoost
+* Light GBM
+
+Similar to baseline model, the metrics like train RMSE, test RMSE and test R2 scores are calculated.
+
+### 6.6 Results
+
+![Figure 9](https://github.com/cybertraining-dsc/fa20-523-314/raw/main/project/images/result.png)
+
+**Figure 9:** Performance of all regression models
+
+Figure 9 documents the performance of all the regression models used. 
+
+cloudmesh.common benchmark and stopwatch framework are used to monitor and record time taken for each steps in this project[^10]. Time taken for critical steps like downloading data, loading data, preprocessing data and execution of each models are recorded. The StopWatch recordings are shown in Table 2. StopWatch recordings played an important role in the selection of best model.
+
+**Table 2:** StopWatch recordings
+
+| Name                       | Status   |     Time |      Sum | Start               | tag   | Node         | User   | OS    | Version                             |
+|----------------------------|----------|----------|----------|---------------------|-------|--------------|--------|-------|-------------------------------------|
+| Data download              | ok       |    2.652 |    2.652 | 2020-11-30 12:43:50 |       | a1f46a7ed3c2 | collab | Linux | #1 SMP Thu Jul 23 08:00:38 PDT 2020 |
+| Data load                  | ok       |    0.074 |    0.074 | 2020-11-30 12:43:53 |       | a1f46a7ed3c2 | collab | Linux | #1 SMP Thu Jul 23 08:00:38 PDT 2020 |
+| Data preprocessing         | ok       |   67.618 |   67.618 | 2020-11-30 12:43:53 |       | a1f46a7ed3c2 | collab | Linux | #1 SMP Thu Jul 23 08:00:38 PDT 2020 |
+| Baseline Linear Regression | ok       |    2.814 |    2.814 | 2020-11-30 12:45:03 |       | a1f46a7ed3c2 | collab | Linux | #1 SMP Thu Jul 23 08:00:38 PDT 2020 |
+| Linear Regression          | ok       |    5.581 |    5.581 | 2020-11-30 12:45:06 |       | a1f46a7ed3c2 | collab | Linux | #1 SMP Thu Jul 23 08:00:38 PDT 2020 |
+| Gradient Boosting          | ok       |  244.868 |  244.868 | 2020-11-30 12:45:12 |       | a1f46a7ed3c2 | collab | Linux | #1 SMP Thu Jul 23 08:00:38 PDT 2020 |
+| XGBoost                    | ok       | 2946.7   | 2946.7   | 2020-11-30 12:49:16 |       | a1f46a7ed3c2 | collab | Linux | #1 SMP Thu Jul 23 08:00:38 PDT 2020 |
+| Light GBM                  | ok       |  770.967 |  770.967 | 2020-11-30 13:38:23 |       | a1f46a7ed3c2 | collab | Linux | #1 SMP Thu Jul 23 08:00:38 PDT 2020 |
+
+For the baseline model, the RMSE values were high and R2 scores was small compared to all other regression models. The hyperparameter tuned linear regression model scores are better compared to basline model. But other three models outweigh both linear models. XGBoost has the lowest RMSE and highest R2 score of all other models. But the time taken for execution is too long. Therefore, XGBoost is computationally expensive which lead us to ignore its scores. Gradient boosting and Ligh GBM have similar scores and hence the time taken for execution has to be considered as the deciding factor here. Gradient boosting completed 135 fits in 244.868 seconds whereas LightGBM took around 770.967 seconds for executing 3645 fits and then prediction. Since per fit execution time for Light GBM is too small, we consider Light GBM as the best model for predicting daily power usage of a residence with similar background conditions.
+
+The RMSE scores for Light GBM are .2896 for train and .2910 for test. The R2 score for test set is .6526.
  
 ## 7. Conclusion
 
-As importance of electricity is increasing, the need to know how or where the power usage increase should also be understood. The model helps to predict the power usage when a set of parameters like weather conditions, weekdays, type of days etc are provided. 
-Since the output is power consumption in kWh, we selected linear regression for modelling. In the initial setup the model produced a test accuracy of 44.6%.
+As the importance of electricity is increasing, the need to know how or where the power usage increase will be a life saver for the electricity consumers. In this project, the daily power consumption of a house is analyzed and modelled for a prediction of electricity usage for residences with similar environments. The model considered a set of parameters like weather conditions, weekdays, type of days etc. for prediction. Since the output is power consumption in kWh, we selected regression for modelling and prediction. Experiments are conducted on five regression models. After analyzing the experiment results, we concluded that the performance of Light GBM model is better and faster compared to all other models. 
+
+## 8. Acknowledments
+
+The author would like to express special thanks to Dr. Geoffrey Fox, Dr. Gregor Von Laszewski and all the associate instructors of Big Data Applications course(FA20-BL-ENGR-E534-11530) offered by Indiana University, Bloomington for the guidance and support throughout the project.
  
 ## 8. References
 
@@ -178,3 +234,7 @@ Available: <https://www.sciencedirect.com/science/article/pii/S0140988318301440#
 [^7]: Group by: split-apply-combine, <https://pandas.pydata.org/pandas-docs/stable/user_guide/groupby.html>
 
 [^8]: Residential Power Usage Prediction script, <https://github.com/cybertraining-dsc/fa20-523-314/blob/main/project/code/residential_power_usage_prediction.ipynb>
+
+[^9]: Mean Square Error & R2 Score Clearly Explained, [Online resource] <https://www.bmc.com/blogs/mean-squared-error-r2-and-variance-in-regression-analysis/>
+
+[^10]: Gregor von Laszewski, Cloudmesh StopWatch and Benchmark from the Cloudmesh Common Library, <https://github.com/cloudmesh/cloudmesh-common>
