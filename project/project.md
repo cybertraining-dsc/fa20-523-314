@@ -147,18 +147,67 @@ For measuring the accuracy of the model, the main data is split into train and t
 Categorical variables and numeric variables are separated and processed in pipelines separately.
 Categorical features are one hot encoded before feeding to the model. Similarly, numerical features are standardized before modelling. Later these two pipelines are joined and modelled used Linear regression and other models. 
 
-### Baseline Linear Regression model
+### 6.3 Metrics
 
-Since the expected target is a real number, we use linear regression as a baseline model. For baseline model, we are not hyperparameter tuning. The accuracy score of baseline model is 44.1% for training set and 44.6 for test set. 
+Out target is a continous variable and hence we implement regression models for prediction. In order to determine how accurate a regression model is, we use the following metrics.
 
-## Linear Regression model with predictors
+#### 6.3.1 Mean squared error(MSE)
 
-For this model we are implementing feature selection and hyperparameter tuning. As we analysed in exploratory data analysis, some features have strong inter-correlation and these features are dropped. The parameters for linear regression are hypertuned and modelled in GridsearchCV of sklearn package. 
+MSE is the average of squares of error. The larger the MSE score, the larger the errors are. Models with lower values of MSE is considered to perform well. But, since MSE is the squared value, the scale of target variable and MSE will be different. Therefore, we go for RMSE values.
+
+#### 6.3.2 Root mean squared error(RMSE)
+
+RMSE is the square root of MSE scores. The square root is introduced to make scale of the errors to be the same as the scale of targets. Similar to MSE, the lower scores for RMSE means the better model performance. Therefore, in this project, the models with lower RMSE values will be monitored.
+
+#### 6.3.3 R-Squared(R2) Score
+
+R2 score is the goodness-of-fit measure. It's a statistical measure that ranges between 0 and 1. R2 score helps the analyst to understand how similar the fitted line is to the data it is fitted to. The closer it is to one, the more likely the model predicts its variance. Similarly, if the score is zero, the model doesn't predict any variance.
+In this project the R2 score of the test data is calculated. The model with highest R2 scores will be considered.
+
+### 6.4 Baseline Linear Regression model
+
+Wwe use linear regression as our baseline model. For baseline model, we are not hyperparameter tuning. For baseline model, the train RMSE score was 0.6783 and R2 for test set was 0.4460. These values are then compared to other regression models with hyperparameter tuning. 
+
+### 6.5 Other regression models
+
+After developing a baseline model, we are developing four other regression models and comparing the results. We implement feature selection and hyperparameter tuning. As we analysed in exploratory data analysis, some features have strong inter-correlation and these features are dropped. The parameters for the regression models are hypertuned and modelled in GridsearchCV of sklearn package. 
+
+The models used for prediction are:
+
+* Linear regression with hyperparamter tuning
+* Gradient boosting
+* XGBoost
+* Light GBM
+
+Similar to baseline model, the metrics like train RMSE, test RMSE and test R2 scores are calculated.
+
+### 6.6 Results
+
+![Figure 9](https://github.com/cybertraining-dsc/fa20-523-314/raw/main/project/images/result.png)
+
+**Figure 9:** Performance of all regression models
+
+Figure 9 documents the performance of all the regression models used. 
+
+cloudmesh.common benchmark and stopwatch framework are used to monitor and record time taken for each steps in this project. The StopWatch recordings are shown in Table 2.
+
+**Table 2:** StopWatch recordings
+
+| Name                         | Status   |     Time |      Sum | Start               | tag   | Node         | User   | OS    | Version                             |
+|------------------------------|----------|----------|----------|---------------------|-------|--------------|--------|-------|-------------------------------------|
+| Data preprocessing           | ok       |   72.986 |  146.383 | 2020-11-30 08:10:16 |       | 756da8d039ed | collab | Linux | #1 SMP Thu Jul 23 08:00:38 PDT 2020 |
+| Baseline Linear Regression   | ok       |    2.747 |    2.747 | 2020-11-30 08:11:31 |       | 756da8d039ed | collab | Linux | #1 SMP Thu Jul 23 08:00:38 PDT 2020 |
+| Linear Regression            | ok       |    5.288 |   15.77  | 2020-11-30 08:11:34 |       | 756da8d039ed | collab | Linux | #1 SMP Thu Jul 23 08:00:38 PDT 2020 |
+| Gradient Boosting            | ok       |  249.175 |  556.847 | 2020-11-30 08:11:39 |       | 756da8d039ed | collab | Linux | #1 SMP Thu Jul 23 08:00:38 PDT 2020 |
+| XGBoost                      | ok       | 2947.85  | 6196.89  | 2020-11-30 08:15:48 |       | 756da8d039ed | collab | Linux | #1 SMP Thu Jul 23 08:00:38 PDT 2020 |
+| Light GBM                    | ok       |  800.339 | 1564.25  | 2020-11-30 09:04:56 |       | 756da8d039ed | collab | Linux | #1 SMP Thu Jul 23 08:00:38 PDT 2020 |
+
+For the baseline model, the RMSE values were high and R2 scores was small compared to all other regression models. The hyperparameter tuned linear regression model scores are better compared to basline model. But other three models outweigh both linear models. XGBoost has the lowest RMSE and highest R2 score of all other models. But the time taken for execution is too long. Therefore, XGBoost is computationally expensive which lead us to ignore its scores. Gradient boosting and Ligh GBM have similar scores and hence the time taken for execution has to be considered as the deciding factor here. Gradient boosting completed 135 fits in 249.175 seconds whereas LightGBM took around 1564.25 seconds for executing 1250 fits. Since per fit execution time for Light GBM is too small, we consider Light GBM as the best model for predicting daily power usage of a residence with similar background conditions.  
  
 ## 7. Conclusion
 
 As importance of electricity is increasing, the need to know how or where the power usage increase should also be understood. The model helps to predict the power usage when a set of parameters like weather conditions, weekdays, type of days etc are provided. 
-Since the output is power consumption in kWh, we selected linear regression for modelling. In the initial setup the model produced a test accuracy of 44.6%.
+Since the output is power consumption in kWh, we selected regression for modelling and prediction. After analysing the results, we concluded that the performance of Light GBM model is better and faster compared to all other models that we experimented.  
  
 ## 8. References
 
