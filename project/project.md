@@ -189,9 +189,52 @@ Similar to baseline model, the metrics like train RMSE, test RMSE and test R2 sc
 
 Figure 9 documents the performance of all the regression models used. 
 
-cloudmesh.common benchmark and stopwatch framework are used to monitor and record time taken for each steps in this project[^10]. Time taken for critical steps like downloading data, loading data, preprocessing data and execution of each models are recorded. The StopWatch recordings are shown in Table 2. StopWatch recordings played an important role in the selection of best model.
+cloudmesh.common benchmark and stopwatch framework are used to monitor and record the time taken for each steps in this project[^10]. Time taken for critical steps like downloading data, loading data, preprocessing data, training and predictions of each models are recorded. The StopWatch recordings are shown in Table 2. StopWatch recordings played an important role in the selection of best model. Benchmark also provides a detailed report on the system or device informations as shown in Table 2.
 
-**Table 2:** StopWatch recordings
+
+**Table 2:** Benchmark results
+
+
+| Attribute           | Value                                                            |
+|---------------------|------------------------------------------------------------------|
+| BUG_REPORT_URL      | "https://bugs.launchpad.net/ubuntu/"                             |
+| DISTRIB_CODENAME    | bionic                                                           |
+| DISTRIB_DESCRIPTION | "Ubuntu 18.04.5 LTS"                                             |
+| DISTRIB_ID          | Ubuntu                                                           |
+| DISTRIB_RELEASE     | 18.04                                                            |
+| HOME_URL            | "https://www.ubuntu.com/"                                        |
+| ID                  | ubuntu                                                           |
+| ID_LIKE             | debian                                                           |
+| NAME                | "Ubuntu"                                                         |
+| PRETTY_NAME         | "Ubuntu 18.04.5 LTS"                                             |
+| PRIVACY_POLICY_URL  | "https://www.ubuntu.com/legal/terms-and-policies/privacy-policy" |
+| SUPPORT_URL         | "https://help.ubuntu.com/"                                       |
+| UBUNTU_CODENAME     | bionic                                                           |
+| VERSION             | "18.04.5 LTS (Bionic Beaver)"                                    |
+| VERSION_CODENAME    | bionic                                                           |
+| VERSION_ID          | "18.04"                                                          |
+| cpu_count           | 2                                                                |
+| mem.active          | 1.0 GiB                                                          |
+| mem.available       | 11.2 GiB                                                         |
+| mem.free            | 8.5 GiB                                                          |
+| mem.inactive        | 2.6 GiB                                                          |
+| mem.percent         | 11.6 %                                                           |
+| mem.total           | 12.7 GiB                                                         |
+| mem.used            | 1.9 GiB                                                          |
+| platform.version    | #1 SMP Thu Jul 23 08:00:38 PDT 2020                              |
+| python              | 3.6.9 (default, Oct  8 2020, 12:12:24)                           |
+|                     | [GCC 8.4.0]                                                      |
+| python.pip          | 19.3.1                                                           |
+| python.version      | 3.6.9                                                            |
+| sys.platform        | linux                                                            |
+| uname.machine       | x86_64                                                           |
+| uname.node          | a1f46a7ed3c2                                                     |
+| uname.processor     | x86_64                                                           |
+| uname.release       | 4.19.112+                                                        |
+| uname.system        | Linux                                                            |
+| uname.version       | #1 SMP Thu Jul 23 08:00:38 PDT 2020                              |
+| user                | collab                                                           |
+
 
 | Name                       | Status   |     Time |      Sum | Start               | tag   | Node         | User   | OS    | Version                             |
 |----------------------------|----------|----------|----------|---------------------|-------|--------------|--------|-------|-------------------------------------|
@@ -214,7 +257,7 @@ As the importance of electricity is increasing, the need to know how or where th
 
 ## 8. Acknowledments
 
-The author would like to express special thanks to Dr. Geoffrey Fox, Dr. Gregor Von Laszewski and all the associate instructors of Big Data Applications course(FA20-BL-ENGR-E534-11530) offered by Indiana University, Bloomington for the guidance and support throughout the project.
+The author would like to express special thanks to Dr. Geoffrey Fox, Dr. Gregor Von Laszewski and all the associate instructors of Big Data Applications course (FA20-BL-ENGR-E534-11530) offered by Indiana University, Bloomington for their continuous guidance and support throughout the project.
  
 ## 8. References
 
