@@ -189,7 +189,7 @@ Similar to baseline model, the metrics like train RMSE, test RMSE and test R2 sc
 
 Figure 9 documents the performance of all the regression models used. 
 
-cloudmesh.common benchmark and stopwatch framework are used to monitor and record the time taken for each steps in this project[^10]. Time taken for critical steps like downloading data, loading data, preprocessing data, training and predictions of each models are recorded. The StopWatch recordings are shown in Table 2. StopWatch recordings played an important role in the selection of best model. Benchmark also provides a detailed report on the system or device informations as shown in Table 2.
+cloudmesh.common benchmark and stopwatch framework are used to monitor and record the time taken for each steps in this project[^10]. Time taken for critical steps like downloading data, loading data, preprocessing data, training and predictions of each models are recorded. The StopWatch recordings are shown in Table 2. StopWatch recordings played an important role in the selection of best model. Benchmark also provides a detailed report on the system or device information as shown in Table 2.
 
 
 **Table 2:** Benchmark results
@@ -247,7 +247,7 @@ cloudmesh.common benchmark and stopwatch framework are used to monitor and recor
 | XGBoost                    | ok       | 2946.7   | 2946.7   | 2020-11-30 12:49:16 |       | a1f46a7ed3c2 | collab | Linux | #1 SMP Thu Jul 23 08:00:38 PDT 2020 |
 | Light GBM                  | ok       |  770.967 |  770.967 | 2020-11-30 13:38:23 |       | a1f46a7ed3c2 | collab | Linux | #1 SMP Thu Jul 23 08:00:38 PDT 2020 |
 
-For the baseline model, the RMSE values were high and R2 scores was small compared to all other regression models. The hyperparameter tuned linear regression model scores are better compared to basline model. But other three models outweigh both linear models. XGBoost has the lowest RMSE and highest R2 score of all other models. But the time taken for execution is too long. Therefore, XGBoost is computationally expensive which lead us to ignore its scores. Gradient boosting and Ligh GBM have similar scores and hence the time taken for execution has to be considered as the deciding factor here. Gradient boosting completed 135 fits in 244.868 seconds whereas LightGBM took around 770.967 seconds for executing 3645 fits and then prediction. Since per fit execution time for Light GBM is too small, we consider Light GBM as the best model for predicting daily power usage of a residence with similar background conditions.
+For the baseline model, the RMSE values were high and R2 scores was small compared to all other regression models. The hyperparameter tuned linear regression model scores are better compared to baseline model. But other three models outweigh both linear models. XGBoost has the lowest RMSE and highest R2 score of all other models. But the time taken for execution is too long. Therefore, XGBoost is computationally expensive which lead us to ignore its scores. Gradient boosting and Light GBM have similar scores and hence the time taken for execution has to be considered as the deciding factor here. Gradient boosting completed 135 fits in 244.868 seconds whereas LightGBM took around 770.967 seconds for executing 3645 fits and then prediction. Since per fit execution time for Light GBM is too small, we consider Light GBM as the best model for predicting daily power usage of a residence with similar background conditions.
 
 The RMSE scores for Light GBM are .2896 for train and .2910 for test. The R2 score for test set is .6526.
  
@@ -255,11 +255,11 @@ The RMSE scores for Light GBM are .2896 for train and .2910 for test. The R2 sco
 
 As the importance of electricity is increasing, the need to know how or where the power usage increase will be a life saver for the electricity consumers. In this project, the daily power consumption of a house is analyzed and modelled for a prediction of electricity usage for residences with similar environments. The model considered a set of parameters like weather conditions, weekdays, type of days etc. for prediction. Since the output is power consumption in kWh, we selected regression for modelling and prediction. Experiments are conducted on five regression models. After analyzing the experiment results, we concluded that the performance of Light GBM model is better and faster compared to all other models. 
 
-## 8. Acknowledments
+## 8. Acknowledgments
 
 The author would like to express special thanks to Dr. Geoffrey Fox, Dr. Gregor Von Laszewski and all the associate instructors of Big Data Applications course (FA20-BL-ENGR-E534-11530) offered by Indiana University, Bloomington for their continuous guidance and support throughout the project.
  
-## 8. References
+## 9. References
 
 [^1]: Jia Li and Richard E. Just, Modeling household energy consumption and adoption of energy efficient technology, Energy Economics, vol. 72, pp. 404-415, 2018.
 Available: <https://www.sciencedirect.com/science/article/pii/S0140988318301440#bbb0180>
