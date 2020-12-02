@@ -2,7 +2,7 @@
 
 [![Check Report](https://github.com/cybertraining-dsc/fa20-523-314/workflows/Check%20Report/badge.svg)](https://github.com/cybertraining-dsc/fa20-523-314/actions)
 [![Status](https://github.com/cybertraining-dsc/fa20-523-314/workflows/Status/badge.svg)](https://github.com/cybertraining-dsc/fa20-523-314/actions)
-Status: in progress
+Status: final
 
 
 Siny P. Raphel, [fa20-523-314](https://github.com/cybertraining-dsc/fa20-523-314/), [Edit](https://github.com/cybertraining-dsc/fa20-523-314/blob/main/project/project.md)
@@ -137,6 +137,8 @@ In Figure 7, we compare the monthly power consumption for three years - 2018, 20
 The correlation plot in Figure 8, depicts the inter-correlation between features. We can see that features like temperature, dew and pressure has high correlation to our target feature. Also different temperatures and dew features are inter-correlated. Therefore, all the intercorrelated features except for temp_avg can be dropped during feature selection. 
 
 ## 6. Modelling
+
+Modelling of the data include splitting data into train and test, include cross validation, create pipelines, select metrics for measuring performance, run data in regression models and discuss results.
 
 ### 6.1 Split Data
 
