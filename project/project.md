@@ -21,6 +21,8 @@ Contents
 
 **Keywords:** power usage, big data, regression 
 
+**Code:** The code is available at [^sinny-code]
+
 ## 1. Introduction
 
 Electricity is an inevitable part of our day-to-day life. The residential power sector consumes about one-fifth of the total energy in the U.S. economy[^1]. Most of the appliances in a household use electricity for its working. The usage of electricity in a residence depends on the standard of living of the country, weather conditions, family size, type of residence, etc[^2]. Most of the houses in the USA are equipped with lightings and refrigerators using electric power. The usage of air conditioners is also increasing. From Figure 1, we can see that the top three categories for energy consumption are air conditioning, space heating, water heating as of 2015.
@@ -281,3 +283,5 @@ Available: <https://www.sciencedirect.com/science/article/pii/S0140988318301440#
 [^9]: Mean Square Error & R2 Score Clearly Explained, [Online resource] <https://www.bmc.com/blogs/mean-squared-error-r2-and-variance-in-regression-analysis/>
 
 [^10]: Gregor von Laszewski, Cloudmesh StopWatch and Benchmark from the Cloudmesh Common Library, <https://github.com/cloudmesh/cloudmesh-common>
+
+[^sinny-code]: Sinny ???,  Code Available: [Online] <https://github.com/cybertraining-dsc/fa20-523-314/tree/main/project/code>, 12/04/2020
