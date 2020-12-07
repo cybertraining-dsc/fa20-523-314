@@ -257,7 +257,7 @@ As the importance of electricity is increasing, the need to know how or where th
 
 ## 8. Acknowledgments
 
-The author would like to express special thanks to Dr. Geoffrey Fox, Dr. Gregor Von Laszewski, and all the associate instructors of the Big Data Applications course (FA20-BL-ENGR-E534-11530) offered by Indiana University, Bloomington for their continuous guidance and support throughout the project.
+The author would like to express special thanks to Dr. Geoffrey Fox, Dr. Gregor von Laszewski, and all the associate instructors of the Big Data Applications course (FA20-BL-ENGR-E534-11530) offered by Indiana University, Bloomington for their continuous guidance and support throughout the project.
  
 ## 9. References
 
