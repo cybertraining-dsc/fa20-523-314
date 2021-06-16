@@ -3,7 +3,7 @@ date: 2021-03-15
 title: Residential Power Usage Prediction
 linkTitle: Energy consumption
 tags: ["project", "ai", "energy"]
-description: Analysis of energy consumption
+description: "We are living in a technology-driven world. Innovations make human life easier. As science advances, the usage of electrical and electronic gadgets are leaping. This leads to the shoot up of power consumption. Weather plays an important role in power usage. Even the outbreak of Covid-19 has impacted daily power utilization. Similarly, many factors influence the use of electricity-driven appliances at homes. Monitoring these factors and consolidating them will result in a humungous amount of data. But analyzing this data will help to keep track of power consumption. This system provides a prediction of usage of electric power at residences in the future and will enable people to plan ahead of time and not be surprised by the monthly electricity bill."
 author: Siny P. Raphel
 resources:
 - src: "**.{png,jpg}"
