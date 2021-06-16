@@ -1,4 +1,14 @@
-# Residential Power Usage Prediction
+---
+date: 2021-03-15
+title: Residential Power Usage Prediction
+linkTitle: Energy consumption
+tags: ["project", "ai", "energy"]
+description: Analysis of energy consumption
+author: Siny P. Raphel
+resources:
+- src: "**.{png,jpg}"
+  title: "Image #:counter"
+---
 
 [![Check Report](https://github.com/cybertraining-dsc/fa20-523-314/workflows/Check%20Report/badge.svg)](https://github.com/cybertraining-dsc/fa20-523-314/actions)
 [![Status](https://github.com/cybertraining-dsc/fa20-523-314/workflows/Status/badge.svg)](https://github.com/cybertraining-dsc/fa20-523-314/actions)
